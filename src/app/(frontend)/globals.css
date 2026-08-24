@@ -1,0 +1,84 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Montserrat', sans-serif;
+  --font-sans: 'Inter', sans-serif;
+
+  --color-navy: #182642;
+  --color-navy-card: #1a2740;
+  --color-navy-border: #2d3c56;
+  --color-divider: #223350;
+  --color-bronze: #4a3d24;
+  --color-ivory: #f4efe7;
+
+  --color-gold: #c8a464;
+  --color-gold-hover: #a9834a;
+  --color-gold-light: #e3c78f;
+  --color-gold-light-hover: #f0dbb0;
+
+  --color-navy-text: #172335;
+  --color-ivory-text: #172332;
+
+  --color-muted: #b0a996;
+  --color-caption: #9a9280;
+  --color-faint: #6b6b6b;
+
+  --color-star: #fbbf24;
+}
+
+:root {
+  --gradient-from: #1c2c4a;
+  --gradient-to: #10182c;
+  --heading-weight: 800;
+  --heading-letter-spacing: 0.015em;
+  --wordmark-letter-spacing: 0.14em;
+}
+
+body {
+  @apply text-neutral-900 antialiased;
+}
+
+.bg-accent-panel {
+  background: linear-gradient(155deg, var(--gradient-from) 0%, var(--gradient-to) 65%);
+}
+
+.font-display {
+  font-weight: var(--heading-weight);
+  letter-spacing: var(--heading-letter-spacing);
+}
+
+@keyframes rsFlash {
+  0% {
+    opacity: 0;
+    transform: scale(1.06);
+  }
+  3% {
+    opacity: 1;
+  }
+  17% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+.rs-slide {
+  animation: rsFlash var(--rs-duration, 8s) linear infinite;
+  animation-delay: var(--rs-delay, 0s);
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rs-slide {
+    animation: none;
+    opacity: 0;
+  }
+  .rs-slide:first-child {
+    opacity: 1;
+  }
+}

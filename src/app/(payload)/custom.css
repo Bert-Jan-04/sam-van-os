@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
+
+html[data-theme='dark'],
+html[data-theme='light'],
+html {
+  --theme-bg: #182642;
+  --theme-input-bg: #1a2740;
+  --theme-text: #ffffff;
+  --theme-border-color: #2d3c56;
+
+  --theme-elevation-0: #182642;
+  --theme-elevation-50: #1a2740;
+  --theme-elevation-100: #1d2c47;
+  --theme-elevation-150: #223350;
+  --theme-elevation-200: #2d3c56;
+  --theme-elevation-250: #334469;
+
+  --theme-elevation-600: #a9834a;
+  --theme-elevation-800: #c8a464;
+
+  --theme-success-500: #c8a464;
+
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-body, 'Inter', sans-serif);
+}
+
+.rebuild-admin-logo {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  letter-spacing: 0.14em;
+  color: #c8a464;
+  text-transform: uppercase;
+}

@@ -1,0 +1,59 @@
+{
+  "name": "sam-van-os-coaching",
+  "version": "0.1.0",
+  "description": "Sam van Os Coaching website — Next.js + Payload CMS",
+  "license": "UNLICENSED",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "cross-env NODE_OPTIONS=\"--no-deprecation --max-old-space-size=8000\" next build --webpack",
+    "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev --webpack",
+    "devsafe": "rm -rf .next && cross-env NODE_OPTIONS=--no-deprecation next dev --webpack",
+    "generate:importmap": "cross-env NODE_OPTIONS=--no-deprecation payload generate:importmap",
+    "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
+    "lint": "cross-env NODE_OPTIONS=--no-deprecation eslint .",
+    "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
+    "payload:migrate": "cross-env NODE_OPTIONS=--no-deprecation payload migrate",
+    "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
+    "vercel-build": "npm run payload:migrate && npm run build"
+  },
+  "dependencies": {
+    "@payloadcms/db-postgres": "3.88.0",
+    "@payloadcms/live-preview-react": "3.88.0",
+    "@payloadcms/next": "3.88.0",
+    "@payloadcms/richtext-lexical": "3.88.0",
+    "@payloadcms/storage-vercel-blob": "3.88.0",
+    "@payloadcms/ui": "3.88.0",
+    "cross-env": "10.1.0",
+    "dotenv": "16.4.7",
+    "graphql": "^16.8.1",
+    "next": "16.3.1",
+    "payload": "3.88.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "sharp": "0.34.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "24.12.3",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "eslint": "^9.16.0",
+    "eslint-config-next": "16.3.0",
+    "prettier": "^3.4.2",
+    "tailwindcss": "4.3.3",
+    "typescript": "6.0.3"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "allowScripts": {
+    "sharp@0.35.3": true,
+    "sharp@0.34.2": true,
+    "esbuild@0.18.20": true,
+    "esbuild@0.25.12": true,
+    "esbuild@0.28.2": true,
+    "unrs-resolver@1.12.2": true,
+    "fsevents@2.3.3": true
+  }
+}

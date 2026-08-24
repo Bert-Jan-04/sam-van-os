@@ -1,0 +1,38 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: sam-van-os-coaching
+    ports:
+      - '5432:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  app:
+    build: .
+    restart: unless-stopped
+    # Opt-in: `docker compose up -d` (bare) stays "just start local Postgres for
+    # `npm run dev`", matching the README. Add the app with `--profile production`.
+    profiles:
+      - production
+    env_file:
+      - .env
+    environment:
+      # Overrides the .env value (meant for `npm run dev` on the host) — inside the
+      # compose network Postgres is reachable by service name, not 127.0.0.1.
+      DATABASE_URI: postgresql://postgres:postgres@postgres:5432/sam-van-os-coaching
+    depends_on:
+      - postgres
+    ports:
+      - '3000:3000'
+    volumes:
+      # Payload's local disk storage — without this, uploads are lost on every
+      # redeploy/restart since the container filesystem itself isn't persisted.
+      - media:/app/media
+
+volumes:
+  pgdata:
+  media:
