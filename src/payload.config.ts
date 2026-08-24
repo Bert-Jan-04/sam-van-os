@@ -34,6 +34,7 @@ export default buildConfig({
       graphics: {
         Logo: '/components/payload/Logo#Logo',
       },
+      beforeDashboard: ['/components/payload/AnalyticsDashboard#AnalyticsDashboard'],
     },
     livePreview: {
       collections: ['pages'],

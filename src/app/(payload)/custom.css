@@ -36,3 +36,77 @@ body {
   color: #c8a464;
   text-transform: uppercase;
 }
+
+.analytics-widget {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border: 1px solid #2d3c56;
+  border-radius: 8px;
+  background: #1a2740;
+}
+
+.analytics-widget__title {
+  margin: 0 0 1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.analytics-widget__empty {
+  margin: 0;
+  color: #9a9280;
+  font-size: 13px;
+}
+
+.analytics-widget__cards {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.analytics-widget__card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.analytics-widget__value {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  color: #c8a464;
+}
+
+.analytics-widget__label {
+  font-size: 12px;
+  color: #9a9280;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.analytics-widget__routes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.analytics-widget__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.analytics-widget__table td {
+  padding: 6px 0;
+  border-top: 1px solid #223350;
+  color: #ffffff;
+  font-size: 13px;
+}
+
+.analytics-widget__table td:last-child {
+  text-align: right;
+  color: #e3c78f;
+  font-variant-numeric: tabular-nums;
+}
