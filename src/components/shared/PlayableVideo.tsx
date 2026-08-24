@@ -32,11 +32,14 @@ export function PlayableVideo({ src, placeholder, buttonSize = 68 }: PlayableVid
     }
   }
 
+  const poster = /\.mp4(\?.*)?$/i.test(src) ? src.replace(/\.mp4(\?.*)?$/i, '-poster.jpg') : undefined
+
   return (
     <>
       <video
         ref={videoRef}
         src={src}
+        poster={poster}
         preload="metadata"
         playsInline
         loop
