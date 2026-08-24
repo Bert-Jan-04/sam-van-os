@@ -9,11 +9,10 @@ export function getMediaUrl(media?: Media | number | null): string | undefined {
 }
 
 /**
- * Relative media path (e.g. `/api/media/file/x.jpg`), for on-page `next/image`/`<video>` src.
- * Next's image optimizer treats an absolute URL as a remote image and rejects it unless
- * `images.remotePatterns` is configured — this app only allows `images.localPatterns`, so
- * on-page media must stay relative. Use `getMediaUrl` instead for contexts that genuinely need
- * an absolute URL, like Open Graph meta tags.
+ * Media URL as stored on the doc, for on-page `next/image`/`<video>` src. Locally this is a
+ * relative path served by Payload (`/api/media/file/x.jpg`); in production it's an absolute
+ * Vercel Blob URL. Both work with `next/image` because the Blob CDN host is allow-listed via
+ * `images.remotePatterns` in next.config.ts.
  */
 export function getMediaPath(media?: Media | number | null): string | undefined {
   if (!media || typeof media === 'number') return undefined
