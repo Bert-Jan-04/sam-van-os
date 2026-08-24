@@ -64,6 +64,7 @@ export default buildConfig({
           disablePayloadAccessControl: true,
         },
       },
+      clientUploads: true,
       token: process.env.BLOB_READ_WRITE_TOKEN,
     }),
   ],

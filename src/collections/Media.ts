@@ -1,5 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
+import { generateVideoPoster } from './hooks/generateVideoPoster'
+
 export const Media: CollectionConfig = {
   slug: 'media',
   admin: {
@@ -8,6 +10,9 @@ export const Media: CollectionConfig = {
   },
   access: {
     read: () => true,
+  },
+  hooks: {
+    afterChange: [generateVideoPoster],
   },
   fields: [
     {

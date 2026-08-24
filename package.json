@@ -18,6 +18,7 @@
     "vercel-build": "npm run payload:migrate && npm run build"
   },
   "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "1.1.0",
     "@payloadcms/db-postgres": "3.88.0",
     "@payloadcms/live-preview-react": "3.88.0",
     "@payloadcms/next": "3.88.0",
@@ -55,6 +56,9 @@
     "esbuild@0.25.12": true,
     "esbuild@0.28.2": true,
     "unrs-resolver@1.12.2": true,
-    "fsevents@2.3.3": true
+    "fsevents@2.3.3": true,
+    "@ffmpeg-installer/darwin-x64@4.1.0": true,
+    "@ffmpeg-installer/linux-x64@4.1.0": true,
+    "@ffmpeg-installer/linux-arm64@4.1.4": true
   }
 }

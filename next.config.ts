@@ -8,6 +8,10 @@ const dirname = path.dirname(__filename)
 
 const nextConfig: NextConfig = {
   output: 'standalone',
+  serverExternalPackages: ['@ffmpeg-installer/ffmpeg'],
+  outputFileTracingIncludes: {
+    '/api/**': ['./node_modules/@ffmpeg-installer/**/*'],
+  },
   images: {
     localPatterns: [
       {
