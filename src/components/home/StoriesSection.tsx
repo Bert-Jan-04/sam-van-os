@@ -1,10 +1,10 @@
 import { getMediaPath } from '@/lib/getMediaUrl'
-import type { Homepage } from '@/payload-types'
+import type { Home } from '@/payload-types'
 
 import { ImageSlot } from '@/components/shared/ImageSlot'
 import { StoryCarousel } from './StoryCarousel'
 
-type StoriesSectionProps = NonNullable<Homepage['stories']>
+type StoriesSectionProps = NonNullable<Home['stories']>
 
 export function StoriesSection({ heading, subtext, items = [] }: StoriesSectionProps) {
   if (!items || items.length === 0) return null
