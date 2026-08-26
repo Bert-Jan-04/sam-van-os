@@ -1,14 +1,17 @@
 import type { GlobalConfig } from 'payload'
 
+import { privateRead } from '@/access/privateRead'
 import { imageField } from '@/fields/image'
+import { privateField } from '@/fields/private'
 
 export const Programma: GlobalConfig = {
   slug: 'programma',
   label: 'Programma',
   access: {
-    read: () => true,
+    read: privateRead,
   },
   fields: [
+    privateField(),
     {
       name: 'hero',
       type: 'group',

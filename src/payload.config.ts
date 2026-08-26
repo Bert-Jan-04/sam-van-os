@@ -15,6 +15,7 @@ import { Header } from './globals/Header'
 import { Cta } from './globals/Cta'
 import { Seo } from './globals/Seo'
 import { Homepage } from './globals/Homepage'
+import { ConceptHomepage } from './globals/ConceptHomepage'
 import { Team } from './globals/Team'
 import { Programma } from './globals/Programma'
 import { Resultaten } from './globals/Resultaten'
@@ -38,7 +39,7 @@ export default buildConfig({
     },
     livePreview: {
       collections: ['pages'],
-      globals: ['homepage', 'team', 'programma', 'resultaten'],
+      globals: ['homepage', 'home', 'team', 'programma', 'resultaten'],
       breakpoints: [
         { name: 'mobile', label: 'Mobiel', width: 375, height: 667 },
         { name: 'tablet', label: 'Tablet', width: 768, height: 1024 },
@@ -46,6 +47,7 @@ export default buildConfig({
       ],
       url: ({ data, collectionConfig, globalConfig }) => {
         if (globalConfig?.slug === 'homepage') return SERVER_URL
+        if (globalConfig?.slug === 'home') return `${SERVER_URL}/home`
         if (globalConfig?.slug === 'team') return `${SERVER_URL}/team`
         if (globalConfig?.slug === 'programma') return `${SERVER_URL}/programma`
         if (globalConfig?.slug === 'resultaten') return `${SERVER_URL}/resultaten`
@@ -56,7 +58,7 @@ export default buildConfig({
     },
   },
   collections: [Pages, Media, Testimonials, Users],
-  globals: [Styling, Settings, Header, Cta, Seo, Homepage, Team, Programma, Resultaten],
+  globals: [Styling, Settings, Header, Cta, Seo, Homepage, ConceptHomepage, Team, Programma, Resultaten],
   plugins: [
     vercelBlobStorage({
       collections: {

@@ -1,14 +1,17 @@
 import type { GlobalConfig } from 'payload'
 
+import { privateRead } from '@/access/privateRead'
 import { imageField } from '@/fields/image'
+import { privateField } from '@/fields/private'
 
 export const Team: GlobalConfig = {
   slug: 'team',
   label: 'Team',
   access: {
-    read: () => true,
+    read: privateRead,
   },
   fields: [
+    privateField(),
     {
       name: 'hero',
       type: 'group',

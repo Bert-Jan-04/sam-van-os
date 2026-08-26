@@ -48,7 +48,7 @@ export function StoryCarousel({ images }: StoryCarouselProps) {
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}
         onPointerCancel={onPointerCancel}
-        className="flex h-full w-full touch-pan-y snap-x snap-mandatory overflow-x-auto overflow-y-hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="flex h-full w-full touch-pan-x snap-x snap-mandatory overflow-x-auto overflow-y-hidden select-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         style={{ cursor: 'grab' }}
       >
         {images.map((image, i) => (

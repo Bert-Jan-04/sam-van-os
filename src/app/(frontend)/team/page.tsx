@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 
+import { getCurrentUser } from '@/lib/getCurrentUser'
 import { getPayloadClient } from '@/lib/payload'
 import { getCta } from '@/lib/getCta'
 import { TeamView } from '@/components/TeamView'
@@ -14,7 +16,15 @@ export const metadata: Metadata = {
 
 export default async function TeamPage() {
   const payload = await getPayloadClient()
-  const [team, cta] = await Promise.all([payload.findGlobal({ slug: 'team' }), getCta()])
+  const user = await getCurrentUser(payload)
+  const [team, cta] = await Promise.all([
+    payload.findGlobal({ slug: 'team', overrideAccess: false, user, disableErrors: true }),
+    getCta(),
+  ])
+
+  if (!team) {
+    notFound()
+  }
 
   return <TeamView team={team} cta={cta} />
 }

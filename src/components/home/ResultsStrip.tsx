@@ -27,7 +27,7 @@ export function ResultsStrip({ heading, images = [] }: ResultsStripProps) {
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}
         onPointerCancel={onPointerCancel}
-        className="w-full cursor-grab snap-x overflow-x-auto touch-pan-y select-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="w-full cursor-grab snap-x overflow-x-auto touch-pan-x select-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         <div className="flex w-max gap-1 px-6 md:px-20">
           {images.map((item, index) => (

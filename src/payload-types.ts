@@ -98,6 +98,7 @@ export interface Config {
     cta: Cta;
     seo: Seo;
     homepage: Homepage;
+    home: Home;
     team: Team;
     programma: Programma;
     resultaten: Resultaten;
@@ -109,6 +110,7 @@ export interface Config {
     cta: CtaSelect<false> | CtaSelect<true>;
     seo: SeoSelect<false> | SeoSelect<true>;
     homepage: HomepageSelect<false> | HomepageSelect<true>;
+    home: HomeSelect<false> | HomeSelect<true>;
     team: TeamSelect<false> | TeamSelect<true>;
     programma: ProgrammaSelect<false> | ProgrammaSelect<true>;
     resultaten: ResultatenSelect<false> | ResultatenSelect<true>;
@@ -152,6 +154,10 @@ export interface Page {
    * Wordt automatisch gegenereerd op basis van "title" als dit leeg blijft.
    */
   slug?: string | null;
+  /**
+   * Verberg dit voor bezoekers. Alleen ingelogde beheerders kunnen het dan nog bekijken.
+   */
+  private?: boolean | null;
   layout?:
     | (
         | HeaderBlock
@@ -560,6 +566,7 @@ export interface PayloadMigration {
 export interface PagesSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
+  private?: T;
   layout?:
     | T
     | {
@@ -1102,6 +1109,10 @@ export interface Seo {
  */
 export interface Homepage {
   id: number;
+  /**
+   * Verberg dit voor bezoekers. Alleen ingelogde beheerders kunnen het dan nog bekijken.
+   */
+  private?: boolean | null;
   hero?: {
     ratingValue?: string | null;
     ratingLabel?: string | null;
@@ -1202,9 +1213,157 @@ export interface Homepage {
     heading?: string | null;
     items?:
       | {
-          title: string;
+          title?: string | null;
           quote: string;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  community?: {
+    heading?: string | null;
+    subtext?: string | null;
+    memberCountText?: string | null;
+    memberCountLabel?: string | null;
+    photos?:
+      | {
+          image?: (number | null) | Media;
+          id?: string | null;
+        }[]
+      | null;
+    starsHeading?: string | null;
+    starsSubtext?: string | null;
+    starsVideos?:
+      | {
+          video?: (number | null) | Media;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  aboutSam?: {
+    heading?: string | null;
+    paragraph1?: string | null;
+    paragraph2?: string | null;
+    closingLine?: string | null;
+    horizontalImage?: (number | null) | Media;
+    image1?: (number | null) | Media;
+    image2?: (number | null) | Media;
+    bottomImage?: (number | null) | Media;
+  };
+  team?: {
+    heading?: string | null;
+    subtext?: string | null;
+    groupImage?: (number | null) | Media;
+    members?:
+      | {
+          image?: (number | null) | Media;
           name: string;
+          role: string;
+          bio: string;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  content?: {
+    heading?: string | null;
+    videos?:
+      | {
+          video?: (number | null) | Media;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  faq?: {
+    heading?: string | null;
+    subtext?: string | null;
+    items?:
+      | {
+          question: string;
+          answer: string;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "home".
+ */
+export interface Home {
+  id: number;
+  /**
+   * Verberg dit voor bezoekers. Alleen ingelogde beheerders kunnen het dan nog bekijken.
+   */
+  private?: boolean | null;
+  hero?: {
+    ratingValue?: string | null;
+    ratingLabel?: string | null;
+    heading?: string | null;
+    intro?: string | null;
+    image?: (number | null) | Media;
+    memberBadgeText?: string | null;
+  };
+  stats?:
+    | {
+        value: string;
+        suffix?: string | null;
+        label: string;
+        id?: string | null;
+      }[]
+    | null;
+  problem?: {
+    heading?: string | null;
+    intro1?: string | null;
+    intro2?: string | null;
+    cards?:
+      | {
+          title: string;
+          text: string;
+          highlight?: boolean | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  philosophy?: {
+    heading?: string | null;
+    paragraph1?: string | null;
+    paragraph2?: string | null;
+  };
+  pillars?: {
+    heading?: string | null;
+    subtext?: string | null;
+    items?:
+      | {
+          title: string;
+          text: string;
+          image?: (number | null) | Media;
+          reversed?: boolean | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  journey?: {
+    eyebrow?: string | null;
+    heading?: string | null;
+    intro?: string | null;
+    image?: (number | null) | Media;
+    steps?:
+      | {
+          phase: string;
+          title: string;
+          text: string;
+          highlight?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  testimonials?: {
+    heading?: string | null;
+    items?:
+      | {
+          title?: string | null;
+          quote: string;
           id?: string | null;
         }[]
       | null;
@@ -1282,6 +1441,10 @@ export interface Homepage {
  */
 export interface Team {
   id: number;
+  /**
+   * Verberg dit voor bezoekers. Alleen ingelogde beheerders kunnen het dan nog bekijken.
+   */
+  private?: boolean | null;
   hero?: {
     eyebrow?: string | null;
     heading?: string | null;
@@ -1359,6 +1522,10 @@ export interface Team {
  */
 export interface Programma {
   id: number;
+  /**
+   * Verberg dit voor bezoekers. Alleen ingelogde beheerders kunnen het dan nog bekijken.
+   */
+  private?: boolean | null;
   hero?: {
     eyebrow?: string | null;
     heading?: string | null;
@@ -1506,6 +1673,10 @@ export interface Programma {
  */
 export interface Resultaten {
   id: number;
+  /**
+   * Verberg dit voor bezoekers. Alleen ingelogde beheerders kunnen het dan nog bekijken.
+   */
+  private?: boolean | null;
   hero?: {
     eyebrow?: string | null;
     heading?: string | null;
@@ -1798,6 +1969,7 @@ export interface SeoSelect<T extends boolean = true> {
  * via the `definition` "homepage_select".
  */
 export interface HomepageSelect<T extends boolean = true> {
+  private?: T;
   hero?:
     | T
     | {
@@ -1911,7 +2083,174 @@ export interface HomepageSelect<T extends boolean = true> {
           | {
               title?: T;
               quote?: T;
+              id?: T;
+            };
+      };
+  community?:
+    | T
+    | {
+        heading?: T;
+        subtext?: T;
+        memberCountText?: T;
+        memberCountLabel?: T;
+        photos?:
+          | T
+          | {
+              image?: T;
+              id?: T;
+            };
+        starsHeading?: T;
+        starsSubtext?: T;
+        starsVideos?:
+          | T
+          | {
+              video?: T;
+              id?: T;
+            };
+      };
+  aboutSam?:
+    | T
+    | {
+        heading?: T;
+        paragraph1?: T;
+        paragraph2?: T;
+        closingLine?: T;
+        horizontalImage?: T;
+        image1?: T;
+        image2?: T;
+        bottomImage?: T;
+      };
+  team?:
+    | T
+    | {
+        heading?: T;
+        subtext?: T;
+        groupImage?: T;
+        members?:
+          | T
+          | {
+              image?: T;
               name?: T;
+              role?: T;
+              bio?: T;
+              id?: T;
+            };
+      };
+  content?:
+    | T
+    | {
+        heading?: T;
+        videos?:
+          | T
+          | {
+              video?: T;
+              id?: T;
+            };
+      };
+  faq?:
+    | T
+    | {
+        heading?: T;
+        subtext?: T;
+        items?:
+          | T
+          | {
+              question?: T;
+              answer?: T;
+              id?: T;
+            };
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "home_select".
+ */
+export interface HomeSelect<T extends boolean = true> {
+  private?: T;
+  hero?:
+    | T
+    | {
+        ratingValue?: T;
+        ratingLabel?: T;
+        heading?: T;
+        intro?: T;
+        image?: T;
+        memberBadgeText?: T;
+      };
+  stats?:
+    | T
+    | {
+        value?: T;
+        suffix?: T;
+        label?: T;
+        id?: T;
+      };
+  problem?:
+    | T
+    | {
+        heading?: T;
+        intro1?: T;
+        intro2?: T;
+        cards?:
+          | T
+          | {
+              title?: T;
+              text?: T;
+              highlight?: T;
+              id?: T;
+            };
+      };
+  philosophy?:
+    | T
+    | {
+        heading?: T;
+        paragraph1?: T;
+        paragraph2?: T;
+      };
+  pillars?:
+    | T
+    | {
+        heading?: T;
+        subtext?: T;
+        items?:
+          | T
+          | {
+              title?: T;
+              text?: T;
+              image?: T;
+              reversed?: T;
+              id?: T;
+            };
+      };
+  journey?:
+    | T
+    | {
+        eyebrow?: T;
+        heading?: T;
+        intro?: T;
+        image?: T;
+        steps?:
+          | T
+          | {
+              phase?: T;
+              title?: T;
+              text?: T;
+              highlight?: T;
+              id?: T;
+            };
+      };
+  testimonials?:
+    | T
+    | {
+        heading?: T;
+        items?:
+          | T
+          | {
+              title?: T;
+              quote?: T;
               id?: T;
             };
       };
@@ -1998,6 +2337,7 @@ export interface HomepageSelect<T extends boolean = true> {
  * via the `definition` "team_select".
  */
 export interface TeamSelect<T extends boolean = true> {
+  private?: T;
   hero?:
     | T
     | {
@@ -2079,6 +2419,7 @@ export interface TeamSelect<T extends boolean = true> {
  * via the `definition` "programma_select".
  */
 export interface ProgrammaSelect<T extends boolean = true> {
+  private?: T;
   hero?:
     | T
     | {
@@ -2242,6 +2583,7 @@ export interface ProgrammaSelect<T extends boolean = true> {
  * via the `definition` "resultaten_select".
  */
 export interface ResultatenSelect<T extends boolean = true> {
+  private?: T;
   hero?:
     | T
     | {

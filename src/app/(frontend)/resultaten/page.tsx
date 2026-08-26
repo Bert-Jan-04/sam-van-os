@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 
+import { getCurrentUser } from '@/lib/getCurrentUser'
 import { getPayloadClient } from '@/lib/payload'
 import { getCta } from '@/lib/getCta'
 import { ResultatenView } from '@/components/ResultatenView'
@@ -14,10 +16,15 @@ export const metadata: Metadata = {
 
 export default async function ResultatenPage() {
   const payload = await getPayloadClient()
+  const user = await getCurrentUser(payload)
   const [resultaten, cta] = await Promise.all([
-    payload.findGlobal({ slug: 'resultaten' }),
+    payload.findGlobal({ slug: 'resultaten', overrideAccess: false, user, disableErrors: true }),
     getCta(),
   ])
+
+  if (!resultaten) {
+    notFound()
+  }
 
   return <ResultatenView resultaten={resultaten} cta={cta} />
 }

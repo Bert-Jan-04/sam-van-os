@@ -24,7 +24,7 @@ export const ReviewsBlockComponent: React.FC<ReviewsBlockProps> = ({ heading, it
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}
         onPointerCancel={onPointerCancel}
-        className="w-full cursor-grab overflow-x-auto touch-pan-y select-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="w-full cursor-grab overflow-x-auto touch-pan-x select-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         <div className="flex w-max gap-5 px-6 md:px-20">
           {items.map((review, index) => (

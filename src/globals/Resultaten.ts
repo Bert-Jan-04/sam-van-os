@@ -1,6 +1,8 @@
 import type { GlobalConfig } from 'payload'
 
+import { privateRead } from '@/access/privateRead'
 import { imageField } from '@/fields/image'
+import { privateField } from '@/fields/private'
 
 const repeat = <T>(count: number, factory: () => T): T[] => Array.from({ length: count }, factory)
 
@@ -8,9 +10,10 @@ export const Resultaten: GlobalConfig = {
   slug: 'resultaten',
   label: 'Resultaten',
   access: {
-    read: () => true,
+    read: privateRead,
   },
   fields: [
+    privateField(),
     {
       name: 'hero',
       type: 'group',

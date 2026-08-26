@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 
+import { getCurrentUser } from '@/lib/getCurrentUser'
 import { getPayloadClient } from '@/lib/payload'
 import { getCta } from '@/lib/getCta'
 import { ProgrammaView } from '@/components/ProgrammaView'
@@ -14,10 +16,15 @@ export const metadata: Metadata = {
 
 export default async function ProgrammaPage() {
   const payload = await getPayloadClient()
+  const user = await getCurrentUser(payload)
   const [programma, cta] = await Promise.all([
-    payload.findGlobal({ slug: 'programma' }),
+    payload.findGlobal({ slug: 'programma', overrideAccess: false, user, disableErrors: true }),
     getCta(),
   ])
+
+  if (!programma) {
+    notFound()
+  }
 
   return <ProgrammaView programma={programma} cta={cta} />
 }

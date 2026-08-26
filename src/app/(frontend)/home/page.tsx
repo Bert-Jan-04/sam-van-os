@@ -9,16 +9,20 @@ import { HomeView } from '@/components/HomeView'
 export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
-  title: 'The Rebuild Program | Sam van Os Coaching',
-  description:
-    'Zes maanden persoonlijke coaching voor vrouwen die willen afvallen. Voeding, training en de patronen eronder — samen met een vaste coach.',
+  title: 'Home | Sam van Os Coaching',
+  robots: { index: false, follow: false },
 }
 
-export default async function HomePage() {
+export default async function ConceptHomePage() {
   const payload = await getPayloadClient()
   const user = await getCurrentUser(payload)
   const [homepage, cta] = await Promise.all([
-    payload.findGlobal({ slug: 'homepage', overrideAccess: false, user, disableErrors: true }),
+    payload.findGlobal({
+      slug: 'home',
+      overrideAccess: false,
+      user,
+      disableErrors: true,
+    }),
     getCta(),
   ])
 
