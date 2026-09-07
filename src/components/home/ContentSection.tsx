@@ -15,7 +15,7 @@ export function ContentSection({ heading, videos = [] }: ContentSectionProps) {
           {heading}
         </h2>
       )}
-      <div className="mx-auto grid max-w-[900px] grid-cols-3 gap-5">
+      <div className="mx-auto grid max-w-[900px] grid-cols-1 gap-5 sm:grid-cols-3">
         {videoUrls.map((url, index) => (
           <div
             key={index}
