@@ -49,7 +49,7 @@ export function AboutSamSection({
           <div className="relative aspect-[3/4] overflow-hidden rounded-2xl md:aspect-auto">
             <ImageSlot alt="Sam" placeholder="foto: Sam" src={getMediaPath(image2)} />
           </div>
-          <div className="relative col-span-2 aspect-video overflow-hidden rounded-2xl md:aspect-auto">
+          <div className="relative col-span-2 aspect-[9/16] overflow-hidden rounded-2xl md:aspect-auto">
             <PlayableVideo placeholder="video: Sam" src={getMediaPath(bottomImage)} />
           </div>
         </div>

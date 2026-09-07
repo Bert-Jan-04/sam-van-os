@@ -24,9 +24,9 @@ export function CommunitySection({
   const photoUrls = (photos ?? []).map((photo) => getMediaPath(photo.image)).slice(0, 4)
   const videoUrls = (starsVideos ?? []).map((item) => getMediaPath(item.video))
   const videoStyleBig =
-    'relative aspect-video overflow-hidden rounded-2xl bg-navy-card md:col-span-1 md:row-span-2 md:aspect-auto md:h-[616px]'
+    'relative aspect-[9/16] overflow-hidden rounded-2xl bg-navy-card md:col-span-1 md:row-span-2 md:aspect-auto md:h-[616px]'
   const videoStyleSmall =
-    'relative aspect-video overflow-hidden rounded-2xl bg-navy-card md:aspect-auto md:h-[300px]'
+    'relative aspect-[9/16] overflow-hidden rounded-2xl bg-navy-card md:aspect-auto md:h-[300px]'
 
   const photoStyleBig =
     'relative col-span-2 row-span-1 overflow-hidden rounded-[18px] md:col-span-1 md:row-span-2 md:h-[314px]'
