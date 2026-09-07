@@ -61,8 +61,12 @@ const stories = {
   ],
 }
 
+// The "home" global was removed in a later migration (see
+// 20260907_143347_remove_home_concept_global); it no longer exists in the
+// current Payload config, so these calls are cast to keep this historical
+// migration compiling without changing its already-applied behavior.
 export async function up({ payload, req }: MigrateUpArgs): Promise<void> {
-  await payload.updateGlobal({
+  await (payload.updateGlobal as any)({
     slug: 'home',
     data: { results, stories },
     req,
@@ -70,7 +74,7 @@ export async function up({ payload, req }: MigrateUpArgs): Promise<void> {
 }
 
 export async function down({ payload, req }: MigrateDownArgs): Promise<void> {
-  await payload.updateGlobal({
+  await (payload.updateGlobal as any)({
     slug: 'home',
     data: {
       results: { heading: results.heading, images: [] },

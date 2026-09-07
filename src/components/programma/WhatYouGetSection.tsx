@@ -16,9 +16,12 @@ export function WhatYouGetSection({ heading, items = [], image }: WhatYouGetSect
       )}
       <div className="grid grid-cols-1 gap-[18px] sm:grid-cols-2 md:grid-cols-3">
         {items.map((item, index) => (
-          <div key={item.id ?? index} className="border-navy-border rounded-2xl border px-[26px] py-7">
-            <h3 className="mb-2.5 text-[17px] font-bold text-white">{item.title}</h3>
-            <p className="text-[14.5px] leading-relaxed text-caption">{item.text}</p>
+          <div
+            key={item.id ?? index}
+            className="border-navy-border flex items-center gap-2.5 rounded-2xl border px-[26px] py-7"
+          >
+            <span className="text-gold-light">✓</span>
+            <p className="text-[15.5px] leading-relaxed text-white">{item.text}</p>
           </div>
         ))}
         <div className="border-navy-border relative min-h-[180px] overflow-hidden rounded-2xl border">

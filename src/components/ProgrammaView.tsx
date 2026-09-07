@@ -14,6 +14,8 @@ import { MethodSection } from '@/components/programma/MethodSection'
 import { ForYouSection } from '@/components/programma/ForYouSection'
 import { WhatYouGetSection } from '@/components/programma/WhatYouGetSection'
 import { TimelineSection } from '@/components/programma/TimelineSection'
+import { ReviewsTeaserSection } from '@/components/programma/ReviewsTeaserSection'
+import { ComparisonSection } from '@/components/programma/ComparisonSection'
 import { CommunitySection } from '@/components/programma/CommunitySection'
 import { ResultsSection } from '@/components/programma/ResultsSection'
 import { ClosingCta } from '@/components/programma/ClosingCta'
@@ -47,6 +49,8 @@ export const ProgrammaView: React.FC<ProgrammaViewProps> = ({
       <ForYouSection {...programma.forYou} />
       <WhatYouGetSection {...programma.whatYouGet} />
       <TimelineSection {...programma.timeline} />
+      <ReviewsTeaserSection {...programma.reviews} />
+      <ComparisonSection {...programma.comparison} />
       <CommunitySection {...programma.community} />
       <ResultsSection {...programma.results} />
       <FaqSection {...programma.faq} />

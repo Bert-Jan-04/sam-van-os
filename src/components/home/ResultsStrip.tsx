@@ -2,11 +2,11 @@
 
 import { getMediaPath } from '@/lib/getMediaUrl'
 import { useDragScroll } from '@/lib/useDragScroll'
-import type { Home } from '@/payload-types'
+import type { Homepage } from '@/payload-types'
 
 import { ImageSlot } from '@/components/shared/ImageSlot'
 
-type ResultsStripProps = NonNullable<Home['results']>
+type ResultsStripProps = NonNullable<Homepage['results']>
 
 export function ResultsStrip({ heading, images = [] }: ResultsStripProps) {
   const { ref, onPointerDown, onPointerMove, onPointerUp, onPointerCancel } =

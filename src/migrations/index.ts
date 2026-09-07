@@ -5,6 +5,8 @@ import * as migration_20260826_081932_add_results_stories_to_home from './202608
 import * as migration_20260826_081950_move_results_stories_data_to_home from './20260826_081950_move_results_stories_data_to_home';
 import * as migration_20260826_082012_remove_results_stories_from_homepage from './20260826_082012_remove_results_stories_from_homepage';
 import * as migration_20260907_133300_add_results_stories_back_to_homepage from './20260907_133300_add_results_stories_back_to_homepage';
+import * as migration_20260907_143347_remove_home_concept_global from './20260907_143347_remove_home_concept_global';
+import * as migration_20260907_144110_update_programma_content from './20260907_144110_update_programma_content';
 
 export const migrations = [
   {
@@ -41,5 +43,15 @@ export const migrations = [
     up: migration_20260907_133300_add_results_stories_back_to_homepage.up,
     down: migration_20260907_133300_add_results_stories_back_to_homepage.down,
     name: '20260907_133300_add_results_stories_back_to_homepage'
+  },
+  {
+    up: migration_20260907_143347_remove_home_concept_global.up,
+    down: migration_20260907_143347_remove_home_concept_global.down,
+    name: '20260907_143347_remove_home_concept_global'
+  },
+  {
+    up: migration_20260907_144110_update_programma_content.up,
+    down: migration_20260907_144110_update_programma_content.down,
+    name: '20260907_144110_update_programma_content'
   },
 ];

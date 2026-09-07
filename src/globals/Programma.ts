@@ -58,13 +58,12 @@ export const Programma: GlobalConfig = {
         {
           name: 'paragraph1',
           type: 'textarea',
-          defaultValue: 'Rebuild draait niet om een tijdelijk voedings- of trainingsschema.',
+          defaultValue:
+            'The Rebuild Program is een 6-maanden online coachingtraject voor vrouwen die hun leefstijl écht willen veranderen. We werken aan voeding, training, mindset en gewoontes, zodat je niet alleen resultaat behaalt, maar leert hoe je dit ook kunt volhouden.',
         },
         {
           name: 'paragraph2',
           type: 'textarea',
-          defaultValue:
-            'Je lichaam verandert wanneer je gedrag verandert. Daarom kijken we niet alleen naar wat je eet of hoeveel je beweegt, maar vooral naar de patronen, overtuigingen en situaties die ervoor zorgen dat je steeds terugvalt.',
         },
         { name: 'coreLabel', type: 'text', label: 'Label kaart', defaultValue: 'De kern' },
         {
@@ -115,7 +114,7 @@ export const Programma: GlobalConfig = {
           name: 'closingStatement',
           type: 'textarea',
           defaultValue:
-            'Het probleem is waarschijnlijk niet dat je te weinig weet. Het probleem is dat je nog geen leefstijl hebt gebouwd die je kunt volhouden.',
+            'Steeds opnieuw beginnen, streng diëten en alles perfect willen doen werkt misschien even, maar niet op de lange termijn. Rebuild draait daarom niet om perfectie, maar om consistentie. We helpen je begrijpen waarom je steeds terugvalt en bouwen samen aan gewoontes die wél blijven.',
         },
       ],
     },
@@ -185,13 +184,13 @@ export const Programma: GlobalConfig = {
         {
           name: 'heading',
           type: 'text',
-          defaultValue: 'Rebuild is voor jou als je klaar bent met steeds opnieuw beginnen.',
+          defaultValue: 'Voor vrouwen die klaar zijn met steeds opnieuw beginnen.',
         },
         {
           name: 'subtext',
           type: 'textarea',
           defaultValue:
-            'Je wilt afvallen en je beter voelen in je lichaam. Maar nog belangrijker: je wilt eindelijk vertrouwen krijgen in jezelf en leren hoe je consistent kunt blijven, ook wanneer het leven niet perfect loopt.',
+            'Je wilt afvallen, sterker worden en lekkerder in je vel zitten, maar vooral een leefstijl creëren die je kunt volhouden.',
         },
         { name: 'doHeading', type: 'text', defaultValue: 'Wel Rebuild' },
         {
@@ -225,47 +224,32 @@ export const Programma: GlobalConfig = {
       type: 'group',
       label: 'Wat krijg je?',
       fields: [
-        { name: 'heading', type: 'text', defaultValue: 'Wat krijg je?' },
+        { name: 'heading', type: 'text', defaultValue: 'Wat krijg je precies?' },
         {
           name: 'items',
           type: 'array',
           labels: { singular: 'Item', plural: 'Items' },
-          fields: [
-            { name: 'title', type: 'text', required: true },
-            { name: 'text', type: 'textarea', required: true },
-          ],
+          fields: [{ name: 'text', type: 'text', required: true }],
           defaultValue: [
-            {
-              title: 'Persoonlijke coach',
-              text: 'Een coach die jouw situatie en patronen leert kennen.',
-            },
-            {
-              title: 'Wekelijkse feedback',
-              text: 'Persoonlijke check-ins en feedback op je voortgang.',
-            },
-            {
-              title: 'Strategische calls',
-              text: 'Op belangrijke momenten gaan we dieper in op wat er speelt.',
-            },
-            {
-              title: 'Coaching-app',
-              text: 'Voor doelen, voeding, training, gewoontes en voortgang.',
-            },
-            {
-              title: 'Rebuild Community',
-              text: 'Een community van vrouwen die aan vergelijkbare doelen werken.',
-            },
+            { text: 'Persoonlijke coaching en begeleiding' },
+            { text: 'Wekelijkse check-ins met je coach' },
+            { text: 'Een persoonlijk plan voor voeding, training en mindset' },
+            { text: '7 dagen per week WhatsApp-support' },
+            { text: 'Toegang tot de Rebuild community met 130+ vrouwen' },
+            { text: 'Coaching-app met trainingsschema en voedingtracker' },
+            { text: 'Online leeromgeving' },
+            { text: 'Toegang tot alle live Rebuild-events' },
           ],
         },
-        imageField('image', 'Foto (zesde tegel)'),
+        imageField('image', 'Foto (extra tegel)'),
       ],
     },
     {
       name: 'timeline',
       type: 'group',
-      label: 'Hoe ziet 26 weken eruit?',
+      label: 'Hoe ziet 6 maanden Rebuild eruit?',
       fields: [
-        { name: 'heading', type: 'text', defaultValue: 'Hoe ziet 26 weken eruit?' },
+        { name: 'heading', type: 'text', defaultValue: 'Hoe ziet 6 maanden Rebuild eruit?' },
         {
           name: 'phases',
           type: 'array',
@@ -299,7 +283,50 @@ export const Programma: GlobalConfig = {
           name: 'closingStatement',
           type: 'textarea',
           defaultValue:
-            'Het doel is niet dat je 26 weken een plan volhoudt. Het doel is dat je na 26 weken weet hoe je zelfstandig verder kunt.',
+            'Je start met een uitgebreide voorbereiding en een persoonlijke kickoff met je coach. Vervolgens werk je 6 maanden lang aan jouw doelen met een persoonlijk plan, wekelijkse check-ins en continue begeleiding. We sturen bij waar nodig en bouwen stap voor stap aan een leefstijl die ook na Rebuild blijft werken.',
+        },
+      ],
+    },
+    {
+      name: 'reviews',
+      type: 'group',
+      label: 'Reviews & testimonials',
+      fields: [
+        { name: 'heading', type: 'text', defaultValue: 'Reviews & testimonials' },
+        {
+          name: 'text',
+          type: 'textarea',
+          defaultValue:
+            'Geen loze beloftes, maar echte verhalen van vrouwen die de stap al hebben gezet. Bekijk hun ervaringen, transformaties en resultaten en ontdek wat Rebuild voor hen heeft veranderd.',
+        },
+        { name: 'ctaLabel', type: 'text', defaultValue: 'Bekijk resultaten' },
+        { name: 'ctaUrl', type: 'text', defaultValue: '/resultaten' },
+      ],
+    },
+    {
+      name: 'comparison',
+      type: 'group',
+      label: 'Rebuild vs. Rebuild Together',
+      fields: [
+        { name: 'heading', type: 'text', defaultValue: 'Rebuild vs. Rebuild Together' },
+        {
+          name: 'items',
+          type: 'array',
+          labels: { singular: 'Variant', plural: "Varianten" },
+          fields: [
+            { name: 'title', type: 'text', required: true },
+            { name: 'text', type: 'textarea', required: true },
+          ],
+          defaultValue: [
+            {
+              title: 'Rebuild',
+              text: 'Persoonlijke 1-op-1 coaching gedurende 6 maanden.',
+            },
+            {
+              title: 'Rebuild Together',
+              text: 'Duurt ook 6 maanden, maar je wordt begeleid in een kleine groep van 6 vrouwen. Je krijgt dezelfde basis van het traject, maar door de groepsvorm ontstaat er een extra laag van samenwerking en verbinding.',
+            },
+          ],
         },
       ],
     },

@@ -4,7 +4,7 @@ import React from 'react'
 import { useLivePreview } from '@payloadcms/live-preview-react'
 
 import { SERVER_URL } from '@/lib/env'
-import type { Homepage, Home, Cta } from '@/payload-types'
+import type { Homepage, Cta } from '@/payload-types'
 import { Hero } from '@/components/home/Hero'
 import { StatsBar } from '@/components/shared/StatsBar'
 import { ProblemSection } from '@/components/home/ProblemSection'
@@ -21,12 +21,12 @@ import { ContentSection } from '@/components/home/ContentSection'
 import { FaqSection } from '@/components/shared/FaqSection'
 
 type HomeViewProps = {
-  homepage: Homepage | Home
+  homepage: Homepage
   cta: Cta
 }
 
 export const HomeView: React.FC<HomeViewProps> = ({ homepage: initialHomepage, cta }) => {
-  const { data: homepage } = useLivePreview<Homepage | Home>({
+  const { data: homepage } = useLivePreview<Homepage>({
     initialData: initialHomepage,
     serverURL: SERVER_URL,
   })
@@ -49,9 +49,9 @@ export const HomeView: React.FC<HomeViewProps> = ({ homepage: initialHomepage, c
         ctaUrl={cta?.buttonUrl}
         ctaHelperText={cta?.text}
       />
-      {'results' in homepage && <ResultsStrip {...homepage.results} />}
-      {'stories' in homepage && <StoriesSection {...homepage.stories} />}
+      <ResultsStrip {...homepage.results} />
       <TestimonialsStrip {...homepage.testimonials} />
+      <StoriesSection {...homepage.stories} />
       <CommunitySection {...homepage.community} />
       <AboutSamSection {...homepage.aboutSam} />
       <TeamSection {...homepage.team} />

@@ -43,9 +43,13 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   CREATE INDEX "homepage_stories_items_order_idx" ON "homepage_stories_items" USING btree ("_order");
   CREATE INDEX "homepage_stories_items_parent_id_idx" ON "homepage_stories_items" USING btree ("_parent_id");`)
 
-  // The content lives on the "home" concept global — copy it over so the real
+  // The content lived on the "home" concept global — copy it over so the real
   // homepage shows the same results/stories instead of starting from defaults.
-  const home = await payload.findGlobal({ slug: 'home', req })
+  // "home" was removed in a later migration (see
+  // 20260907_143347_remove_home_concept_global), so this call is cast to keep
+  // this historical migration compiling without changing its already-applied
+  // behavior.
+  const home = await (payload.findGlobal as any)({ slug: 'home', req })
 
   await payload.updateGlobal({
     slug: 'homepage',
