@@ -12,7 +12,6 @@ import { PhilosophySection } from '@/components/home/PhilosophySection'
 import { PillarsSection } from '@/components/home/PillarsSection'
 import { JourneySection } from '@/components/home/JourneySection'
 import { ResultsStrip } from '@/components/home/ResultsStrip'
-import { StoriesSection } from '@/components/home/StoriesSection'
 import { TestimonialsStrip } from '@/components/home/TestimonialsStrip'
 import { CommunitySection } from '@/components/home/CommunitySection'
 import { AboutSamSection } from '@/components/home/AboutSamSection'
@@ -51,7 +50,6 @@ export const HomeView: React.FC<HomeViewProps> = ({ homepage: initialHomepage, c
       />
       <ResultsStrip {...homepage.results} />
       <TestimonialsStrip {...homepage.testimonials} />
-      <StoriesSection {...homepage.stories} />
       <CommunitySection {...homepage.community} />
       <AboutSamSection {...homepage.aboutSam} />
       <TeamSection {...homepage.team} />
