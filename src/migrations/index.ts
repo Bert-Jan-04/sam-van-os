@@ -8,6 +8,7 @@ import * as migration_20260907_133300_add_results_stories_back_to_homepage from 
 import * as migration_20260907_143347_remove_home_concept_global from './20260907_143347_remove_home_concept_global';
 import * as migration_20260907_144110_update_programma_content from './20260907_144110_update_programma_content';
 import * as migration_20260907_150657_remove_stories_from_homepage from './20260907_150657_remove_stories_from_homepage';
+import * as migration_20260907_151314_team_video_to_tertiary_image from './20260907_151314_team_video_to_tertiary_image';
 
 export const migrations = [
   {
@@ -59,5 +60,10 @@ export const migrations = [
     up: migration_20260907_150657_remove_stories_from_homepage.up,
     down: migration_20260907_150657_remove_stories_from_homepage.down,
     name: '20260907_150657_remove_stories_from_homepage'
+  },
+  {
+    up: migration_20260907_151314_team_video_to_tertiary_image.up,
+    down: migration_20260907_151314_team_video_to_tertiary_image.down,
+    name: '20260907_151314_team_video_to_tertiary_image'
   },
 ];

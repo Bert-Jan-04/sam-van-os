@@ -1,6 +1,5 @@
 import { getMediaPath } from '@/lib/getMediaUrl'
 import { ImageSlot } from '@/components/shared/ImageSlot'
-import { PlayableVideo } from '@/components/shared/PlayableVideo'
 import type { Media } from '@/payload-types'
 
 type ProfileBlockProps = {
@@ -13,7 +12,7 @@ type ProfileBlockProps = {
   instagramHandle?: string | null
   mainImage?: Media | number | null
   secondaryImage?: Media | number | null
-  video?: Media | number | null
+  tertiaryImage?: Media | number | null
   reversed?: boolean | null
 }
 
@@ -27,7 +26,7 @@ export function ProfileBlock({
   instagramHandle,
   mainImage,
   secondaryImage,
-  video,
+  tertiaryImage,
   reversed,
 }: ProfileBlockProps) {
   return (
@@ -84,7 +83,11 @@ export function ProfileBlock({
             />
           </div>
           <div className="relative aspect-square overflow-hidden rounded-2xl">
-            <PlayableVideo src={getMediaPath(video)} placeholder={`video: ${name ?? ''}`} buttonSize={44} />
+            <ImageSlot
+              alt={name ?? ''}
+              placeholder={`foto: ${name ?? ''}`}
+              src={getMediaPath(tertiaryImage)}
+            />
           </div>
         </div>
       </div>

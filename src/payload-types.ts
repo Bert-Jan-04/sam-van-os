@@ -1293,7 +1293,7 @@ export interface Team {
     instagramHandle?: string | null;
     mainImage?: (number | null) | Media;
     secondaryImage?: (number | null) | Media;
-    video?: (number | null) | Media;
+    tertiaryImage?: (number | null) | Media;
   };
   coaches?: {
     heading?: string | null;
@@ -1315,7 +1315,7 @@ export interface Team {
           instagramHandle?: string | null;
           mainImage?: (number | null) | Media;
           secondaryImage?: (number | null) | Media;
-          video?: (number | null) | Media;
+          tertiaryImage?: (number | null) | Media;
           reversed?: boolean | null;
           id?: string | null;
         }[]
@@ -2016,7 +2016,7 @@ export interface TeamSelect<T extends boolean = true> {
         instagramHandle?: T;
         mainImage?: T;
         secondaryImage?: T;
-        video?: T;
+        tertiaryImage?: T;
       };
   coaches?:
     | T
@@ -2035,7 +2035,7 @@ export interface TeamSelect<T extends boolean = true> {
               instagramHandle?: T;
               mainImage?: T;
               secondaryImage?: T;
-              video?: T;
+              tertiaryImage?: T;
               reversed?: T;
               id?: T;
             };

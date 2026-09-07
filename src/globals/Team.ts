@@ -68,7 +68,7 @@ export const Team: GlobalConfig = {
         { name: 'instagramHandle', type: 'text', defaultValue: '@samvanos' },
         imageField('mainImage', 'Hoofdfoto'),
         imageField('secondaryImage', 'Foto (aan het werk)'),
-        imageField('video', 'Video'),
+        imageField('tertiaryImage', 'Foto 3'),
       ],
     },
     {
@@ -111,7 +111,7 @@ export const Team: GlobalConfig = {
             { name: 'instagramHandle', type: 'text' },
             imageField('mainImage', 'Hoofdfoto'),
             imageField('secondaryImage', 'Foto (aan het werk)'),
-            imageField('video', 'Video'),
+            imageField('tertiaryImage', 'Foto 3'),
             {
               name: 'reversed',
               type: 'checkbox',
