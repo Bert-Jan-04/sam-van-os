@@ -23,7 +23,7 @@ export const TimelineBlock: Block = {
           name: 'label',
           type: 'text',
           required: true,
-          admin: { description: 'Bijv. "01 — Start"' },
+          admin: { description: 'Bijv. "01 - Start"' },
         },
         { name: 'text', type: 'textarea', required: true },
       ],

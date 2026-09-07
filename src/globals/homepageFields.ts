@@ -107,7 +107,7 @@ export const homepageFields: Field[] = [
           },
           {
             title: 'Geen vertrouwen meer',
-            text: 'Je hebt al drie keer eerder iets geprobeerd. Elke keer dacht je: nu wel. En elke keer kwam het gewicht terug. Je bent niet bang om te starten — je bent bang dat het weer niet werkt.',
+            text: 'Je hebt al drie keer eerder iets geprobeerd. Elke keer dacht je: nu wel. En elke keer kwam het gewicht terug. Je bent niet bang om te starten. Je bent bang dat het weer niet werkt.',
             highlight: false,
           },
         ],
@@ -449,12 +449,12 @@ export const homepageFields: Field[] = [
           {
             question: 'Wat maakt dit anders dan een voedings- en trainingsschema?',
             answer:
-              'Een schema vertelt je wat je moet doen. Dat is niet waar je vastloopt. Je loopt vast op het moment dat het druk wordt, dat je een slechte dag hebt, dat je na één weekend denkt: laat maar, maandag opnieuw. Rebuild werkt aan voeding en training, maar net zo serieus aan de patronen die ervoor zorgen dat elk plan tot nu toe stopte. Je krijgt geen PDF en een wekelijks berichtje — je krijgt een coach die naast je staat, wekelijkse persoonlijke feedback, strategische gesprekken en een community van vrouwen die met dezelfde dingen worstelen.',
+              'Een schema vertelt je wat je moet doen. Dat is niet waar je vastloopt. Je loopt vast op het moment dat het druk wordt, dat je een slechte dag hebt, dat je na één weekend denkt: laat maar, maandag opnieuw. Rebuild werkt aan voeding en training, maar net zo serieus aan de patronen die ervoor zorgen dat elk plan tot nu toe stopte. Je krijgt geen PDF en een wekelijks berichtje. Je krijgt een coach die naast je staat, wekelijkse persoonlijke feedback, strategische gesprekken en een community van vrouwen die met dezelfde dingen worstelen.',
           },
           {
             question: 'Ik weet eigenlijk al best veel over afvallen. Heeft coaching dan wel zin?',
             answer:
-              'Juist dan. De meeste vrouwen die bij ons starten hebben geen gebrek aan kennis. Ze weten wat gezond is, ze hebben genoeg gelezen en genoeg geprobeerd. Het probleem is niet weten — het is toepassen als het moeilijk wordt. Omgaan met een terugval, met emotie-eten, met de stem in je hoofd die zegt dat het toch geen zin heeft. Daar zit de coaching: niet in wat je moet doen, maar in wat je tegenhoudt.',
+              'Juist dan. De meeste vrouwen die bij ons starten hebben geen gebrek aan kennis. Ze weten wat gezond is, ze hebben genoeg gelezen en genoeg geprobeerd. Het probleem is niet weten. Het is toepassen als het moeilijk wordt. Omgaan met een terugval, met emotie-eten, met de stem in je hoofd die zegt dat het toch geen zin heeft. Daar zit de coaching: niet in wat je moet doen, maar in wat je tegenhoudt.',
           },
           {
             question: 'Wat kost het?',
@@ -464,27 +464,27 @@ export const homepageFields: Field[] = [
           {
             question: 'Moet ik al kunnen sporten?',
             answer:
-              'Nee. We stemmen alles af op waar je nu staat, niet op waar je "zou moeten" zijn. Of je al jaren traint of nog nooit een voet in een sportschool hebt gezet — het startpunt is jouw situatie. Het enige dat we vragen is de bereidheid om stappen te zetten.',
+              'Nee. We stemmen alles af op waar je nu staat, niet op waar je "zou moeten" zijn. Of je al jaren traint of nog nooit een voet in een sportschool hebt gezet. Het startpunt is jouw situatie. Het enige dat we vragen is de bereidheid om stappen te zetten.',
           },
           {
             question: 'Moet ik perfect eten? Nooit meer uit eten of een wijntje drinken?',
             answer:
-              'Nee, en dat is precies het punt. We bouwen een aanpak die werkt in een normaal leven — met verjaardagen, vakanties, etentjes en weken waarin alles tegenzit. Als het alleen werkt onder perfecte omstandigheden, werkt het niet. Perfectie is vaak juist het patroon dat we doorbreken: het idee dat je het of héél goed doet, of dat je het helemaal loslaat.',
+              'Nee, en dat is precies het punt. We bouwen een aanpak die werkt in een normaal leven, met verjaardagen, vakanties, etentjes en weken waarin alles tegenzit. Als het alleen werkt onder perfecte omstandigheden, werkt het niet. Perfectie is vaak juist het patroon dat we doorbreken: het idee dat je het of héél goed doet, of dat je het helemaal loslaat.',
           },
           {
             question: 'Wat als ik halverwege wil stoppen?',
             answer:
-              'Dan is dat precies het moment waarop coaching het meest waardevol is. De meeste mensen stoppen niet omdat iets niet werkt — ze stoppen omdat het moeilijk wordt: een plateau, een drukke periode, het gevoel dat het niet snel genoeg gaat. Dat is het patroon. Jouw coach ziet dat aankomen, benoemt het en helpt je erdoorheen. Dat is het verschil met iets in je eentje doen — je hebt iemand die niet opgeeft als jij het even niet meer ziet zitten. We verwachten wel dat jij er ook voor gaat: commitment is wederzijds.',
+              'Dan is dat precies het moment waarop coaching het meest waardevol is. De meeste mensen stoppen niet omdat iets niet werkt. Ze stoppen omdat het moeilijk wordt: een plateau, een drukke periode, het gevoel dat het niet snel genoeg gaat. Dat is het patroon. Jouw coach ziet dat aankomen, benoemt het en helpt je erdoorheen. Dat is het verschil met iets in je eentje doen. Je hebt iemand die niet opgeeft als jij het even niet meer ziet zitten. We verwachten wel dat jij er ook voor gaat: commitment is wederzijds.',
           },
           {
             question: 'Hoe ziet het contact met mijn coach eruit?',
             answer:
-              'Je hebt één vaste coach gedurende het hele traject. Elke week ontvang je persoonlijke feedback — via video, Loom of een call, afhankelijk van de fase. Op strategische momenten zijn er diepere gesprekken over patronen, voortgang en waar je tegenaan loopt. Daarnaast vul je wekelijks een reflectie in en heb je toegang tot de coaching-app voor voeding, training en dagelijkse gewoontes. Het is geen eenzijdig schema dat je afwerkt — het is een doorlopend gesprek.',
+              'Je hebt één vaste coach gedurende het hele traject. Elke week ontvang je persoonlijke feedback, via video, Loom of een call, afhankelijk van de fase. Op strategische momenten zijn er diepere gesprekken over patronen, voortgang en waar je tegenaan loopt. Daarnaast vul je wekelijks een reflectie in en heb je toegang tot de coaching-app voor voeding, training en dagelijkse gewoontes. Het is geen eenzijdig schema dat je afwerkt. Het is een doorlopend gesprek.',
           },
           {
             question: 'Wat als Rebuild niet bij mij past?',
             answer:
-              'Dan vertellen we je dat. Het kennismakingsgesprek is er niet om je te overtuigen, maar om eerlijk te kijken of er een match is. Rebuild is niet voor iedereen. Als je alleen een schema zoekt, als je niet bereid bent om naar jezelf te kijken, of als je situatie vraagt om iets anders dan wat wij bieden — dan zeggen we dat liever nu dan halverwege. Dat gesprek is er net zo goed voor jou als voor ons.',
+              'Dan vertellen we je dat. Het kennismakingsgesprek is er niet om je te overtuigen, maar om eerlijk te kijken of er een match is. Rebuild is niet voor iedereen. Als je alleen een schema zoekt, als je niet bereid bent om naar jezelf te kijken, of als je situatie vraagt om iets anders dan wat wij bieden, dan zeggen we dat liever nu dan halverwege. Dat gesprek is er net zo goed voor jou als voor ons.',
           },
         ],
       },

@@ -270,7 +270,7 @@ export const Resultaten: GlobalConfig = {
       labels: { singular: 'Quote', plural: 'Quotes' },
       fields: [
         { name: 'quote', type: 'textarea', required: true },
-        { name: 'attribution', type: 'text', required: true, admin: { description: 'Bijv. "Lois, 32 — 26 weken Rebuild"' } },
+        { name: 'attribution', type: 'text', required: true, admin: { description: 'Bijv. "Lois, 32 - 26 weken Rebuild"' } },
         {
           name: 'variant',
           type: 'select',
@@ -284,23 +284,23 @@ export const Resultaten: GlobalConfig = {
       ],
       defaultValue: [
         {
-          quote: '[quote over het moment dat het kwartje viel — twee tot drie regels]',
-          attribution: '[naam], [leeftijd] — [x] weken Rebuild',
+          quote: '[quote over het moment dat het kwartje viel, twee tot drie regels]',
+          attribution: '[naam], [leeftijd] - [x] weken Rebuild',
           variant: 'outline',
         },
         {
-          quote: '[quote over zelfvertrouwen of energie — twee tot drie regels]',
-          attribution: '[naam], [leeftijd] — [x] weken Rebuild',
+          quote: '[quote over zelfvertrouwen of energie, twee tot drie regels]',
+          attribution: '[naam], [leeftijd] - [x] weken Rebuild',
           variant: 'highlight',
         },
         {
           quote: '[quote over de begeleiding en accountability]',
-          attribution: '[naam], [leeftijd] — [x] weken Rebuild',
+          attribution: '[naam], [leeftijd] - [x] weken Rebuild',
           variant: 'muted',
         },
         {
           quote: '[quote over hoe het nu gaat, na het traject]',
-          attribution: '[naam], [leeftijd] — [x] weken Rebuild',
+          attribution: '[naam], [leeftijd] - [x] weken Rebuild',
           variant: 'outline',
         },
       ],
@@ -328,7 +328,7 @@ export const Resultaten: GlobalConfig = {
           defaultValue: [
             {
               label: 'Gewicht & omtrek',
-              text: 'Wekelijks, als trend over meerdere weken — niet als dagcijfer.',
+              text: 'Wekelijks, als trend over meerdere weken, niet als dagcijfer.',
             },
             {
               label: 'Kracht in de training',

@@ -23,7 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
     path: '/',
     fallbackTitle: 'The Rebuild Program | Sam van Os Coaching',
     fallbackDescription:
-      'Zes maanden persoonlijke coaching voor vrouwen die willen afvallen. Voeding, training en de patronen eronder — samen met een vaste coach.',
+      'Zes maanden persoonlijke coaching voor vrouwen die willen afvallen. Voeding, training en de patronen eronder, samen met een vaste coach.',
     seo: homepage?.seo,
   })
 }

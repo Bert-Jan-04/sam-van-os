@@ -257,26 +257,26 @@ export const Programma: GlobalConfig = {
           type: 'array',
           labels: { singular: 'Fase', plural: "Fases" },
           fields: [
-            { name: 'label', type: 'text', required: true, admin: { description: 'Bijv. "01 — Start"' } },
+            { name: 'label', type: 'text', required: true, admin: { description: 'Bijv. "01 - Start"' } },
             { name: 'text', type: 'textarea', required: true },
           ],
           defaultValue: [
-            { label: '01 — Start', text: 'Kennismaking, intake & persoonlijke doelen.' },
-            { label: '02 — Fundament', text: 'Je eerste routines en gedragsfocus.' },
+            { label: '01 - Start', text: 'Kennismaking, intake & persoonlijke doelen.' },
+            { label: '02 - Fundament', text: 'Je eerste routines en gedragsfocus.' },
             {
-              label: '03 — Implementatie',
+              label: '03 - Implementatie',
               text: 'Leren omgaan met weerstand, drukte en terugval.',
             },
             {
-              label: '04 — Verdieping',
+              label: '04 - Verdieping',
               text: 'Patronen, identiteit, sociale situaties en nieuwe strategieën.',
             },
             {
-              label: '05 — Zelfstandigheid',
+              label: '05 - Zelfstandigheid',
               text: 'Steeds meer vertrouwen om zelf keuzes te maken.',
             },
             {
-              label: '06 — Rebuild',
+              label: '06 - Rebuild',
               text: 'Evalueren, vooruitkijken en bouwen aan je leven na coaching.',
             },
           ],
@@ -395,7 +395,7 @@ export const Programma: GlobalConfig = {
           defaultValue: [
             {
               resultText: '-11 kg + meer vertrouwen + eindelijk consistent',
-              quoteText: 'Naam klant — 26 weken Rebuild',
+              quoteText: 'Naam klant - 26 weken Rebuild',
             },
             {
               resultText: 'Resultaat + persoonlijke verandering',

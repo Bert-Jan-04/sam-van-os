@@ -440,7 +440,7 @@ export interface TimelineBlock {
   phases?:
     | {
         /**
-         * Bijv. "01 — Start"
+         * Bijv. "01 - Start"
          */
         label: string;
         text: string;
@@ -1525,7 +1525,7 @@ export interface Programma {
     phases?:
       | {
           /**
-           * Bijv. "01 — Start"
+           * Bijv. "01 - Start"
            */
           label: string;
           text: string;
@@ -1722,7 +1722,7 @@ export interface Resultaten {
     | {
         quote: string;
         /**
-         * Bijv. "Lois, 32 — 26 weken Rebuild"
+         * Bijv. "Lois, 32 - 26 weken Rebuild"
          */
         attribution: string;
         variant?: ('outline' | 'highlight' | 'muted') | null;

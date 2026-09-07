@@ -13,6 +13,7 @@ import * as migration_20260907_152842_programma_reviews_to_participant_videos fr
 import * as migration_20260907_160434_add_timeline_block from './20260907_160434_add_timeline_block';
 import * as migration_20260907_173014_add_member_avatar_photos from './20260907_173014_add_member_avatar_photos';
 import * as migration_20260907_192721_add_seo_field_to_main_globals from './20260907_192721_add_seo_field_to_main_globals';
+import * as migration_20260907_202833_remove_em_dashes_from_content from './20260907_202833_remove_em_dashes_from_content';
 
 export const migrations = [
   {
@@ -89,5 +90,10 @@ export const migrations = [
     up: migration_20260907_192721_add_seo_field_to_main_globals.up,
     down: migration_20260907_192721_add_seo_field_to_main_globals.down,
     name: '20260907_192721_add_seo_field_to_main_globals'
+  },
+  {
+    up: migration_20260907_202833_remove_em_dashes_from_content.up,
+    down: migration_20260907_202833_remove_em_dashes_from_content.down,
+    name: '20260907_202833_remove_em_dashes_from_content'
   },
 ];
