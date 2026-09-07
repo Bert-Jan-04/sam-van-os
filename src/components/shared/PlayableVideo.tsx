@@ -32,7 +32,8 @@ export function PlayableVideo({ src, placeholder, buttonSize = 68 }: PlayableVid
     }
   }
 
-  const poster = /\.mp4(\?.*)?$/i.test(src) ? src.replace(/\.mp4(\?.*)?$/i, '-poster.jpg') : undefined
+  const [srcPath] = src.split('?')
+  const poster = `${srcPath.replace(/\.[^/.]+$/, '')}-poster.jpg`
 
   return (
     <>
