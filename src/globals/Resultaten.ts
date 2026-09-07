@@ -3,6 +3,7 @@ import type { GlobalConfig } from 'payload'
 import { privateRead } from '@/access/privateRead'
 import { imageField } from '@/fields/image'
 import { privateField } from '@/fields/private'
+import { seoField } from '@/fields/seo'
 
 const repeat = <T>(count: number, factory: () => T): T[] => Array.from({ length: count }, factory)
 
@@ -14,6 +15,7 @@ export const Resultaten: GlobalConfig = {
   },
   fields: [
     privateField(),
+    seoField(),
     {
       name: 'hero',
       type: 'group',

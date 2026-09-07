@@ -3,6 +3,7 @@ import type { GlobalConfig } from 'payload'
 import { privateRead } from '@/access/privateRead'
 import { imageField } from '@/fields/image'
 import { privateField } from '@/fields/private'
+import { seoField } from '@/fields/seo'
 
 export const Team: GlobalConfig = {
   slug: 'team',
@@ -12,6 +13,7 @@ export const Team: GlobalConfig = {
   },
   fields: [
     privateField(),
+    seoField(),
     {
       name: 'hero',
       type: 'group',

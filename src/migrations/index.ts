@@ -12,6 +12,7 @@ import * as migration_20260907_151314_team_video_to_tertiary_image from './20260
 import * as migration_20260907_152842_programma_reviews_to_participant_videos from './20260907_152842_programma_reviews_to_participant_videos';
 import * as migration_20260907_160434_add_timeline_block from './20260907_160434_add_timeline_block';
 import * as migration_20260907_173014_add_member_avatar_photos from './20260907_173014_add_member_avatar_photos';
+import * as migration_20260907_192721_add_seo_field_to_main_globals from './20260907_192721_add_seo_field_to_main_globals';
 
 export const migrations = [
   {
@@ -83,5 +84,10 @@ export const migrations = [
     up: migration_20260907_173014_add_member_avatar_photos.up,
     down: migration_20260907_173014_add_member_avatar_photos.down,
     name: '20260907_173014_add_member_avatar_photos'
+  },
+  {
+    up: migration_20260907_192721_add_seo_field_to_main_globals.up,
+    down: migration_20260907_192721_add_seo_field_to_main_globals.down,
+    name: '20260907_192721_add_seo_field_to_main_globals'
   },
 ];

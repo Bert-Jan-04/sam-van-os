@@ -1308,6 +1308,19 @@ export interface Homepage {
         }[]
       | null;
   };
+  /**
+   * Overschrijft de standaard SEO-instellingen uit de SEO-global voor deze pagina.
+   */
+  seo?: {
+    metaTitle?: string | null;
+    metaDescription?: string | null;
+    ogImage?: (number | null) | Media;
+    /**
+     * Alleen invullen om de standaard canonical URL te overschrijven.
+     */
+    canonicalURL?: string | null;
+    noIndex?: boolean | null;
+  };
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -1321,6 +1334,19 @@ export interface Team {
    * Verberg dit voor bezoekers. Alleen ingelogde beheerders kunnen het dan nog bekijken.
    */
   private?: boolean | null;
+  /**
+   * Overschrijft de standaard SEO-instellingen uit de SEO-global voor deze pagina.
+   */
+  seo?: {
+    metaTitle?: string | null;
+    metaDescription?: string | null;
+    ogImage?: (number | null) | Media;
+    /**
+     * Alleen invullen om de standaard canonical URL te overschrijven.
+     */
+    canonicalURL?: string | null;
+    noIndex?: boolean | null;
+  };
   hero?: {
     eyebrow?: string | null;
     heading?: string | null;
@@ -1402,6 +1428,19 @@ export interface Programma {
    * Verberg dit voor bezoekers. Alleen ingelogde beheerders kunnen het dan nog bekijken.
    */
   private?: boolean | null;
+  /**
+   * Overschrijft de standaard SEO-instellingen uit de SEO-global voor deze pagina.
+   */
+  seo?: {
+    metaTitle?: string | null;
+    metaDescription?: string | null;
+    ogImage?: (number | null) | Media;
+    /**
+     * Alleen invullen om de standaard canonical URL te overschrijven.
+     */
+    canonicalURL?: string | null;
+    noIndex?: boolean | null;
+  };
   hero?: {
     eyebrow?: string | null;
     heading?: string | null;
@@ -1571,6 +1610,19 @@ export interface Resultaten {
    * Verberg dit voor bezoekers. Alleen ingelogde beheerders kunnen het dan nog bekijken.
    */
   private?: boolean | null;
+  /**
+   * Overschrijft de standaard SEO-instellingen uit de SEO-global voor deze pagina.
+   */
+  seo?: {
+    metaTitle?: string | null;
+    metaDescription?: string | null;
+    ogImage?: (number | null) | Media;
+    /**
+     * Alleen invullen om de standaard canonical URL te overschrijven.
+     */
+    canonicalURL?: string | null;
+    noIndex?: boolean | null;
+  };
   hero?: {
     eyebrow?: string | null;
     heading?: string | null;
@@ -2045,6 +2097,15 @@ export interface HomepageSelect<T extends boolean = true> {
               id?: T;
             };
       };
+  seo?:
+    | T
+    | {
+        metaTitle?: T;
+        metaDescription?: T;
+        ogImage?: T;
+        canonicalURL?: T;
+        noIndex?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
@@ -2055,6 +2116,15 @@ export interface HomepageSelect<T extends boolean = true> {
  */
 export interface TeamSelect<T extends boolean = true> {
   private?: T;
+  seo?:
+    | T
+    | {
+        metaTitle?: T;
+        metaDescription?: T;
+        ogImage?: T;
+        canonicalURL?: T;
+        noIndex?: T;
+      };
   hero?:
     | T
     | {
@@ -2137,6 +2207,15 @@ export interface TeamSelect<T extends boolean = true> {
  */
 export interface ProgrammaSelect<T extends boolean = true> {
   private?: T;
+  seo?:
+    | T
+    | {
+        metaTitle?: T;
+        metaDescription?: T;
+        ogImage?: T;
+        canonicalURL?: T;
+        noIndex?: T;
+      };
   hero?:
     | T
     | {
@@ -2323,6 +2402,15 @@ export interface ProgrammaSelect<T extends boolean = true> {
  */
 export interface ResultatenSelect<T extends boolean = true> {
   private?: T;
+  seo?:
+    | T
+    | {
+        metaTitle?: T;
+        metaDescription?: T;
+        ogImage?: T;
+        canonicalURL?: T;
+        noIndex?: T;
+      };
   hero?:
     | T
     | {
