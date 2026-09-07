@@ -1443,11 +1443,14 @@ export interface Programma {
       | null;
     closingStatement?: string | null;
   };
-  reviews?: {
+  participantVideos?: {
     heading?: string | null;
-    text?: string | null;
-    ctaLabel?: string | null;
-    ctaUrl?: string | null;
+    videos?:
+      | {
+          video?: (number | null) | Media;
+          id?: string | null;
+        }[]
+      | null;
   };
   comparison?: {
     heading?: string | null;
@@ -2174,13 +2177,16 @@ export interface ProgrammaSelect<T extends boolean = true> {
             };
         closingStatement?: T;
       };
-  reviews?:
+  participantVideos?:
     | T
     | {
         heading?: T;
-        text?: T;
-        ctaLabel?: T;
-        ctaUrl?: T;
+        videos?:
+          | T
+          | {
+              video?: T;
+              id?: T;
+            };
       };
   comparison?:
     | T

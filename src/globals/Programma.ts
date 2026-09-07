@@ -288,19 +288,19 @@ export const Programma: GlobalConfig = {
       ],
     },
     {
-      name: 'reviews',
+      name: 'participantVideos',
       type: 'group',
-      label: 'Reviews & testimonials',
+      label: "Deelnemer video's",
       fields: [
-        { name: 'heading', type: 'text', defaultValue: 'Reviews & testimonials' },
+        { name: 'heading', type: 'text', defaultValue: 'Deelnemer Rebuild programma' },
         {
-          name: 'text',
-          type: 'textarea',
-          defaultValue:
-            'Geen loze beloftes, maar echte verhalen van vrouwen die de stap al hebben gezet. Bekijk hun ervaringen, transformaties en resultaten en ontdek wat Rebuild voor hen heeft veranderd.',
+          name: 'videos',
+          type: 'array',
+          label: "Video's",
+          labels: { singular: 'Video', plural: "Video's" },
+          fields: [imageField('video', 'Video')],
+          defaultValue: [{}, {}, {}],
         },
-        { name: 'ctaLabel', type: 'text', defaultValue: 'Bekijk resultaten' },
-        { name: 'ctaUrl', type: 'text', defaultValue: '/resultaten' },
       ],
     },
     {

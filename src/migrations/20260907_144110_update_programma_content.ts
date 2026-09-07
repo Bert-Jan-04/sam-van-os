@@ -21,7 +21,11 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   CREATE INDEX "programma_comparison_items_order_idx" ON "programma_comparison_items" USING btree ("_order");
   CREATE INDEX "programma_comparison_items_parent_id_idx" ON "programma_comparison_items" USING btree ("_parent_id");`)
 
-  await payload.updateGlobal({
+  // "reviews" was later restructured into "participantVideos" (see
+  // 20260907_152842_programma_reviews_to_participant_videos), so this call is
+  // cast to keep this historical migration compiling without changing its
+  // already-applied behavior.
+  await (payload.updateGlobal as any)({
     slug: 'programma',
     data: {
       whatIsIt: {
