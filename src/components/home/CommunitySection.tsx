@@ -1,3 +1,5 @@
+import NextImage from 'next/image'
+
 import { getMediaPath } from '@/lib/getMediaUrl'
 import type { Homepage } from '@/payload-types'
 
@@ -6,11 +8,14 @@ import { PlayableVideo } from '@/components/shared/PlayableVideo'
 
 type CommunitySectionProps = NonNullable<Homepage['community']>
 
+const avatarColors = ['bg-neutral-700', 'bg-neutral-600', 'bg-neutral-500']
+
 export function CommunitySection({
   heading,
   subtext,
   memberCountText,
   memberCountLabel,
+  memberAvatars = [],
   photos = [],
   starsHeading,
   starsSubtext,
@@ -56,9 +61,19 @@ export function CommunitySection({
             <div className="bg-accent-panel border-bronze relative flex h-[150px] items-center justify-center overflow-hidden rounded-[18px] border">
               <div className="px-4 text-center">
                 <div className="flex justify-center">
-                  <div className="border-navy h-[26px] w-[26px] rounded-full border-2 bg-neutral-700" />
-                  <div className="border-navy -ml-2.5 h-[26px] w-[26px] rounded-full border-2 bg-neutral-600" />
-                  <div className="border-navy -ml-2.5 h-[26px] w-[26px] rounded-full border-2 bg-neutral-500" />
+                  {[0, 1, 2].map((i) => {
+                    const url = getMediaPath(memberAvatars?.[i]?.image)
+                    return (
+                      <div
+                        key={i}
+                        className={`border-navy relative h-[26px] w-[26px] overflow-hidden rounded-full border-2 ${i > 0 ? '-ml-2.5' : ''} ${url ? '' : avatarColors[i]}`}
+                      >
+                        {url && (
+                          <NextImage src={url} alt="" fill sizes="26px" className="object-cover" />
+                        )}
+                      </div>
+                    )
+                  })}
                 </div>
                 <span className="font-display mt-2 block text-2xl text-white">
                   {memberCountText}

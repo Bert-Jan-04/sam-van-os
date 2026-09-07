@@ -25,6 +25,15 @@ export const homepageFields: Field[] = [
       },
       imageField('image', 'Foto'),
       { name: 'memberBadgeText', type: 'text', defaultValue: '100+ leden' },
+      {
+        name: 'memberAvatars',
+        type: 'array',
+        label: "Foto's (kringetjes)",
+        labels: { singular: 'Foto', plural: "Foto's" },
+        maxRows: 3,
+        fields: [imageField('image', 'Foto')],
+        defaultValue: [{}, {}, {}],
+      },
     ],
   },
   {
@@ -329,6 +338,15 @@ export const homepageFields: Field[] = [
       },
       { name: 'memberCountText', type: 'text', defaultValue: '100+' },
       { name: 'memberCountLabel', type: 'text', defaultValue: 'LEDEN TRAINEN SAMEN' },
+      {
+        name: 'memberAvatars',
+        type: 'array',
+        label: "Foto's (kringetjes)",
+        labels: { singular: 'Foto', plural: "Foto's" },
+        maxRows: 3,
+        fields: [imageField('image', 'Foto')],
+        defaultValue: [{}, {}, {}],
+      },
       {
         name: 'photos',
         type: 'array',

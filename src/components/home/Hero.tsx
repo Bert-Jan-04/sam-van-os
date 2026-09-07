@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import NextImage from 'next/image'
 
 import { getMediaPath } from '@/lib/getMediaUrl'
 import type { Homepage } from '@/payload-types'
@@ -8,6 +9,8 @@ import type { CtaProps } from './types'
 
 type HeroProps = NonNullable<Homepage['hero']> & CtaProps
 
+const avatarColors = ['bg-neutral-700', 'bg-neutral-600', 'bg-neutral-500']
+
 export function Hero({
   ratingValue,
   ratingLabel,
@@ -15,6 +18,7 @@ export function Hero({
   intro,
   image,
   memberBadgeText,
+  memberAvatars = [],
   ctaLabel,
   ctaUrl,
   ctaHelperText,
@@ -55,9 +59,19 @@ export function Hero({
         <ImageSlot alt="Sam, actie shot" placeholder="foto: Sam, actie shot" src={getMediaPath(image)} priority />
         <div className="absolute right-5 bottom-5 z-10 hidden items-center gap-2 rounded-full bg-black/55 py-2 pr-3.5 pl-2 backdrop-blur-sm md:flex">
           <div className="flex">
-            <div className="border-navy h-6 w-6 rounded-full border-2 bg-neutral-700" />
-            <div className="border-navy -ml-2 h-6 w-6 rounded-full border-2 bg-neutral-600" />
-            <div className="border-navy -ml-2 h-6 w-6 rounded-full border-2 bg-neutral-500" />
+            {[0, 1, 2].map((i) => {
+              const url = getMediaPath(memberAvatars?.[i]?.image)
+              return (
+                <div
+                  key={i}
+                  className={`border-navy relative h-6 w-6 overflow-hidden rounded-full border-2 ${i > 0 ? '-ml-2' : ''} ${url ? '' : avatarColors[i]}`}
+                >
+                  {url && (
+                    <NextImage src={url} alt="" fill sizes="24px" className="object-cover" />
+                  )}
+                </div>
+              )
+            })}
           </div>
           <span className="text-xs font-semibold text-white">{memberBadgeText}</span>
         </div>

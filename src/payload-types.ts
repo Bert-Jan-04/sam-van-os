@@ -1158,6 +1158,12 @@ export interface Homepage {
     intro?: string | null;
     image?: (number | null) | Media;
     memberBadgeText?: string | null;
+    memberAvatars?:
+      | {
+          image?: (number | null) | Media;
+          id?: string | null;
+        }[]
+      | null;
   };
   stats?:
     | {
@@ -1246,6 +1252,12 @@ export interface Homepage {
     subtext?: string | null;
     memberCountText?: string | null;
     memberCountLabel?: string | null;
+    memberAvatars?:
+      | {
+          image?: (number | null) | Media;
+          id?: string | null;
+        }[]
+      | null;
     photos?:
       | {
           image?: (number | null) | Media;
@@ -1861,6 +1873,12 @@ export interface HomepageSelect<T extends boolean = true> {
         intro?: T;
         image?: T;
         memberBadgeText?: T;
+        memberAvatars?:
+          | T
+          | {
+              image?: T;
+              id?: T;
+            };
       };
   stats?:
     | T
@@ -1965,6 +1983,12 @@ export interface HomepageSelect<T extends boolean = true> {
         subtext?: T;
         memberCountText?: T;
         memberCountLabel?: T;
+        memberAvatars?:
+          | T
+          | {
+              image?: T;
+              id?: T;
+            };
         photos?:
           | T
           | {
