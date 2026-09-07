@@ -50,10 +50,10 @@ export const HomeView: React.FC<HomeViewProps> = ({ homepage: initialHomepage, c
       />
       <ResultsStrip {...homepage.results} />
       <TestimonialsStrip {...homepage.testimonials} />
+      <ContentSection {...homepage.content} />
       <CommunitySection {...homepage.community} />
       <AboutSamSection {...homepage.aboutSam} />
       <TeamSection {...homepage.team} />
-      <ContentSection {...homepage.content} />
       <FaqSection {...homepage.faq} />
     </div>
   )
