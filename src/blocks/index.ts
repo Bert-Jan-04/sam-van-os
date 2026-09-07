@@ -10,6 +10,7 @@ import { ResultsBlock } from './Results/config'
 import { VideoBlock } from './Video/config'
 import { FaqBlock } from './Faq/config'
 import { CardsBlock } from './Cards/config'
+import { TimelineBlock } from './Timeline/config'
 
 /**
  * Every Payload block used by the Pages `layout` field.
@@ -27,4 +28,5 @@ export const blocks: Block[] = [
   VideoBlock,
   FaqBlock,
   CardsBlock,
+  TimelineBlock,
 ]

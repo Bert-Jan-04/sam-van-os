@@ -168,6 +168,7 @@ export interface Page {
         | VideoBlock
         | FaqBlock
         | CardsBlock
+        | TimelineBlock
       )[]
     | null;
   /**
@@ -432,6 +433,27 @@ export interface CardsBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TimelineBlock".
+ */
+export interface TimelineBlock {
+  heading?: string | null;
+  phases?:
+    | {
+        /**
+         * Bijv. "01 — Start"
+         */
+        label: string;
+        text: string;
+        id?: string | null;
+      }[]
+    | null;
+  closingStatement?: string | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'timeline';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "testimonials".
  */
 export interface Testimonial {
@@ -578,6 +600,7 @@ export interface PagesSelect<T extends boolean = true> {
         video?: T | VideoBlockSelect<T>;
         faq?: T | FaqBlockSelect<T>;
         cards?: T | CardsBlockSelect<T>;
+        timeline?: T | TimelineBlockSelect<T>;
       };
   seo?:
     | T
@@ -730,6 +753,23 @@ export interface CardsBlockSelect<T extends boolean = true> {
         text?: T;
         id?: T;
       };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TimelineBlock_select".
+ */
+export interface TimelineBlockSelect<T extends boolean = true> {
+  heading?: T;
+  phases?:
+    | T
+    | {
+        label?: T;
+        text?: T;
+        id?: T;
+      };
+  closingStatement?: T;
   id?: T;
   blockName?: T;
 }

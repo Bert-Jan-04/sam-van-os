@@ -10,6 +10,7 @@ import { ResultsBlockComponent } from './Results/Component'
 import { VideoBlockComponent } from './Video/Component'
 import { FaqBlockComponent } from './Faq/Component'
 import { CardsBlockComponent } from './Cards/Component'
+import { TimelineBlockComponent } from './Timeline/Component'
 
 /**
  * Maps a block's `slug` to the React component that renders it on the frontend.
@@ -30,4 +31,5 @@ export const blockComponents: Record<string, React.ComponentType<any>> = {
   video: VideoBlockComponent,
   faq: FaqBlockComponent,
   cards: CardsBlockComponent,
+  timeline: TimelineBlockComponent,
 }
