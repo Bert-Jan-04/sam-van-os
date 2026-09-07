@@ -1175,6 +1175,40 @@ export interface Homepage {
         }[]
       | null;
   };
+  results?: {
+    heading?: string | null;
+    images?:
+      | {
+          image?: (number | null) | Media;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  stories?: {
+    heading?: string | null;
+    subtext?: string | null;
+    items?:
+      | {
+          /**
+           * Bijv. "Verhaal 01"
+           */
+          eyebrowLabel: string;
+          title: string;
+          text: string;
+          name: string;
+          /**
+           * Eén foto toont een vaste afbeelding, meerdere foto's tonen een swipebare carrousel.
+           */
+          photos?:
+            | {
+                image?: (number | null) | Media;
+                id?: string | null;
+              }[]
+            | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
   testimonials?: {
     heading?: string | null;
     items?:
@@ -2039,6 +2073,38 @@ export interface HomepageSelect<T extends boolean = true> {
               title?: T;
               text?: T;
               highlight?: T;
+              id?: T;
+            };
+      };
+  results?:
+    | T
+    | {
+        heading?: T;
+        images?:
+          | T
+          | {
+              image?: T;
+              id?: T;
+            };
+      };
+  stories?:
+    | T
+    | {
+        heading?: T;
+        subtext?: T;
+        items?:
+          | T
+          | {
+              eyebrowLabel?: T;
+              title?: T;
+              text?: T;
+              name?: T;
+              photos?:
+                | T
+                | {
+                    image?: T;
+                    id?: T;
+                  };
               id?: T;
             };
       };
