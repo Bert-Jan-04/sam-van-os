@@ -46,12 +46,14 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   // The content lived on the "home" concept global — copy it over so the real
   // homepage shows the same results/stories instead of starting from defaults.
   // "home" was removed in a later migration (see
-  // 20260907_143347_remove_home_concept_global), so this call is cast to keep
-  // this historical migration compiling without changing its already-applied
-  // behavior.
+  // 20260907_143347_remove_home_concept_global) and "stories" was later
+  // dropped from "homepage" too (see
+  // 20260907_150657_remove_stories_from_homepage), so this call is cast to
+  // keep this historical migration compiling without changing its
+  // already-applied behavior.
   const home = await (payload.findGlobal as any)({ slug: 'home', req })
 
-  await payload.updateGlobal({
+  await (payload.updateGlobal as any)({
     slug: 'homepage',
     data: {
       results: home.results,

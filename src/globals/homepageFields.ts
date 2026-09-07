@@ -250,68 +250,6 @@ export const homepageFields: Field[] = [
     ],
   },
   {
-    name: 'stories',
-    type: 'group',
-    label: 'Verhalen',
-    fields: [
-      { name: 'heading', type: 'text', defaultValue: 'Drie verhalen' },
-      {
-        name: 'subtext',
-        type: 'text',
-        defaultValue: 'Verschillende startpunten, hetzelfde traject.',
-      },
-      {
-        name: 'items',
-        type: 'array',
-        labels: { singular: 'Verhaal', plural: 'Verhalen' },
-        fields: [
-          {
-            name: 'eyebrowLabel',
-            type: 'text',
-            required: true,
-            admin: { description: 'Bijv. "Verhaal 01"' },
-          },
-          { name: 'title', type: 'text', required: true },
-          { name: 'text', type: 'textarea', required: true },
-          { name: 'name', type: 'text', required: true },
-          {
-            name: 'photos',
-            type: 'array',
-            labels: { singular: 'Foto', plural: "Foto's" },
-            admin: {
-              description:
-                "Eén foto toont een vaste afbeelding, meerdere foto's tonen een swipebare carrousel.",
-            },
-            fields: [imageField('image', 'Foto')],
-          },
-        ],
-        defaultValue: [
-          {
-            eyebrowLabel: 'Verhaal 01',
-            title: 'Verhaal van Lois',
-            text: 'Na jaren van een ongezonde relatie met voeding en mijn lichaam, ontdekte ik dat echte progressie draait om kracht, balans en vertrouwen. Die persoonlijke reis groeide uit tot mijn passie: vandaag help ik andere vrouwen om sterker te worden, zelfverzekerder te voelen en een gezonde relatie met voeding op te bouwen. 🤍',
-            name: 'Lois',
-            photos: repeat(19, () => ({})),
-          },
-          {
-            eyebrowLabel: 'Verhaal 02',
-            title: 'Titel van het verhaal',
-            text: 'Zet hier het verhaal van een klant neer: waar ze vandaan kwam, wat er onderweg veranderde en waar ze nu staat.',
-            name: 'Naam klant',
-            photos: [{}],
-          },
-          {
-            eyebrowLabel: 'Verhaal 03',
-            title: 'Titel van het verhaal',
-            text: 'Zet hier het verhaal van een klant neer: waar ze vandaan kwam, wat er onderweg veranderde en waar ze nu staat.',
-            name: 'Naam klant',
-            photos: [{}],
-          },
-        ],
-      },
-    ],
-  },
-  {
     name: 'testimonials',
     type: 'group',
     label: 'Testimonials',
@@ -359,6 +297,22 @@ export const homepageFields: Field[] = [
               'En tot vandaag de dag nu zelf zonder je heb je de basis gelegd voor nog meer progressie! Emotie eten heb je me helemaal leren overwinnen en zelfs nu met jou kennis kan ik nog meer groeien! Je bent de beste beslissing geweest die ik ooit voor mijzelf heb kunnen maken 🫶\n\nIk wil je dan ook ontzettend bedanken voor de support en de kennis van afgelopen periode. Ik kijk uit naar het komende jaar en heb zin om er met volle vaart en kracht voor te gaan. 🤝',
           },
         ],
+      },
+    ],
+  },
+  {
+    name: 'content',
+    type: 'group',
+    label: 'Content-sectie',
+    fields: [
+      { name: 'heading', type: 'text', defaultValue: 'Bekijk mijn content' },
+      {
+        name: 'videos',
+        type: 'array',
+        label: "Video's",
+        labels: { singular: 'Video', plural: "Video's" },
+        fields: [imageField('video', 'Video')],
+        defaultValue: repeat(3, () => ({})),
       },
     ],
   },
@@ -451,22 +405,6 @@ export const homepageFields: Field[] = [
           role: 'Rol binnen Rebuild',
           bio: 'Korte introductie: specialisme, ervaring en waar deze coach je bij helpt.',
         })),
-      },
-    ],
-  },
-  {
-    name: 'content',
-    type: 'group',
-    label: 'Content-sectie',
-    fields: [
-      { name: 'heading', type: 'text', defaultValue: 'Bekijk mijn content' },
-      {
-        name: 'videos',
-        type: 'array',
-        label: "Video's",
-        labels: { singular: 'Video', plural: "Video's" },
-        fields: [imageField('video', 'Video')],
-        defaultValue: repeat(3, () => ({})),
       },
     ],
   },
