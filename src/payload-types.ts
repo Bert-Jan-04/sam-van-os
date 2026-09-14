@@ -99,6 +99,7 @@ export interface Config {
     seo: Seo;
     homepage: Homepage;
     team: Team;
+    sam: Sam;
     programma: Programma;
     resultaten: Resultaten;
   };
@@ -110,6 +111,7 @@ export interface Config {
     seo: SeoSelect<false> | SeoSelect<true>;
     homepage: HomepageSelect<false> | HomepageSelect<true>;
     team: TeamSelect<false> | TeamSelect<true>;
+    sam: SamSelect<false> | SamSelect<true>;
     programma: ProgrammaSelect<false> | ProgrammaSelect<true>;
     resultaten: ResultatenSelect<false> | ResultatenSelect<true>;
   };
@@ -1420,6 +1422,53 @@ export interface Team {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "sam".
+ */
+export interface Sam {
+  id: number;
+  /**
+   * Verberg dit voor bezoekers. Alleen ingelogde beheerders kunnen het dan nog bekijken.
+   */
+  private?: boolean | null;
+  /**
+   * Overschrijft de standaard SEO-instellingen uit de SEO-global voor deze pagina.
+   */
+  seo?: {
+    metaTitle?: string | null;
+    metaDescription?: string | null;
+    ogImage?: (number | null) | Media;
+    /**
+     * Alleen invullen om de standaard canonical URL te overschrijven.
+     */
+    canonicalURL?: string | null;
+    noIndex?: boolean | null;
+  };
+  hero?: {
+    eyebrow?: string | null;
+    heading?: string | null;
+    intro?: string | null;
+    image?: (number | null) | Media;
+  };
+  chapters?:
+    | {
+        heading: string;
+        text: string;
+        id?: string | null;
+      }[]
+    | null;
+  quote?: {
+    text?: string | null;
+    attribution?: string | null;
+  };
+  closing?: {
+    heading?: string | null;
+    text?: string | null;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "programma".
  */
 export interface Programma {
@@ -2190,6 +2239,52 @@ export interface TeamSelect<T extends boolean = true> {
               highlight?: T;
               id?: T;
             };
+      };
+  closing?:
+    | T
+    | {
+        heading?: T;
+        text?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "sam_select".
+ */
+export interface SamSelect<T extends boolean = true> {
+  private?: T;
+  seo?:
+    | T
+    | {
+        metaTitle?: T;
+        metaDescription?: T;
+        ogImage?: T;
+        canonicalURL?: T;
+        noIndex?: T;
+      };
+  hero?:
+    | T
+    | {
+        eyebrow?: T;
+        heading?: T;
+        intro?: T;
+        image?: T;
+      };
+  chapters?:
+    | T
+    | {
+        heading?: T;
+        text?: T;
+        id?: T;
+      };
+  quote?:
+    | T
+    | {
+        text?: T;
+        attribution?: T;
       };
   closing?:
     | T

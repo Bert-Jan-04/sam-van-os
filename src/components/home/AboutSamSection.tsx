@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import { getMediaPath } from '@/lib/getMediaUrl'
 import type { Homepage } from '@/payload-types'
 
@@ -39,8 +41,14 @@ export function AboutSamSection({
             <p className="mb-5 text-base leading-relaxed text-muted">{paragraph2}</p>
           )}
           {closingLine && (
-            <p className="text-base leading-relaxed font-semibold text-white">{closingLine}</p>
+            <p className="mb-5 text-base leading-relaxed font-semibold text-white">{closingLine}</p>
           )}
+          <Link
+            href="/sam"
+            className="text-sm font-bold text-gold-light underline-offset-4 hover:underline"
+          >
+            Lees mijn volledige verhaal →
+          </Link>
         </div>
         <div className="grid grid-cols-2 gap-3.5 md:h-full md:grid-rows-[1fr_1.3fr]">
           <div className="relative aspect-[3/4] overflow-hidden rounded-2xl md:aspect-auto">
