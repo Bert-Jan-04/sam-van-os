@@ -7,6 +7,7 @@ import { getCta } from '@/lib/getCta'
 import { getMediaPath } from '@/lib/getMediaUrl'
 import { LinkFieldLink } from '@/components/LinkFieldLink'
 import { MobileNav } from '@/components/MobileNav'
+import { Wordmark } from '@/components/Wordmark'
 
 export async function Header() {
   const [settings, header, cta] = await Promise.all([getSettings(), getHeaderSettings(), getCta()])
@@ -28,7 +29,7 @@ export async function Header() {
               className="rounded-md"
             />
           )}
-          <span className="font-display text-gold text-[15px] tracking-[var(--wordmark-letter-spacing)]">REBUILD</span>
+          <Wordmark />
         </Link>
 
         <div className="flex items-center gap-8 max-md:hidden">

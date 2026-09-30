@@ -35,7 +35,6 @@ export const ReviewsBlockComponent: React.FC<ReviewsBlockProps> = ({ heading, it
               <h3 className="font-display mb-3.5 text-[22px] leading-[1.15] text-ivory-text uppercase">
                 {review.title}
               </h3>
-              <span className="text-star mb-3.5 text-[15px] tracking-widest">★★★★★</span>
               <p className="mb-6 text-sm leading-relaxed text-ivory-text/70">{review.quote}</p>
               <span className="mt-auto text-[13px] font-semibold text-ivory-text/60">
                 {review.name}

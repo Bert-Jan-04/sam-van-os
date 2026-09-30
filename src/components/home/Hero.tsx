@@ -33,7 +33,6 @@ export function Hero({
       <div className="relative z-10 md:pl-14">
         <div className="mb-5 flex items-center gap-2">
           <span className="text-sm font-bold text-white">{ratingValue}</span>
-          <span className="text-star text-sm">★★★★★</span>
           <span className="text-[13px] text-muted md:text-caption">{ratingLabel}</span>
         </div>
         <h1 className="font-display mb-[22px] text-[32px] leading-[1.05] tracking-wide text-white uppercase md:text-[44px] md:leading-[1.05]">

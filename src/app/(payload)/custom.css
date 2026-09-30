@@ -28,13 +28,31 @@ body {
 }
 
 .rebuild-admin-logo {
-  display: inline-block;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
   font-size: 28px;
+  line-height: 1;
   letter-spacing: 0.14em;
-  color: #c8a464;
-  text-transform: uppercase;
+}
+
+.rebuild-admin-logo__re {
+  color: var(--theme-text);
+}
+
+.rebuild-admin-logo__bar {
+  width: 2px;
+  height: 1.35em;
+  margin: 0 0.45em;
+  background: #c8a464;
+}
+
+.rebuild-admin-logo__build {
+  background: linear-gradient(to bottom, #e3c78f, #c8a464);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .analytics-widget {

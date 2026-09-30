@@ -37,7 +37,6 @@ export function TestimonialsStrip({ heading, items = [] }: TestimonialsStripProp
                   {testimonial.title}
                 </h3>
               )}
-              <span className="text-star mb-3.5 text-[15px] tracking-widest">★★★★★</span>
               <p className="whitespace-pre-line text-sm leading-relaxed text-ivory-text/70">
                 {testimonial.quote}
               </p>

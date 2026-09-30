@@ -14,14 +14,12 @@ export default function Icon() {
           alignItems: 'center',
           justifyContent: 'center',
           background: '#182642',
-          borderRadius: 6,
           color: '#c8a464',
-          fontSize: 22,
-          fontWeight: 700,
-          fontFamily: 'Georgia, serif',
+          fontSize: 20,
         }}
       >
         R
+        <div style={{ width: 1.5, height: 20, marginLeft: 3, background: '#c8a464' }} />
       </div>
     ),
     { ...size }

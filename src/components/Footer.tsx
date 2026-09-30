@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { getSettings } from '@/lib/getSettings'
 import { getCta } from '@/lib/getCta'
 import { LinkFieldLink } from '@/components/LinkFieldLink'
+import { Wordmark } from '@/components/Wordmark'
 import type { Setting } from '@/payload-types'
 
 function SocialIcon({
@@ -80,7 +81,7 @@ export async function Footer() {
       <div className="mx-auto max-w-[1200px] px-20 pt-11 pb-8 max-md:px-5">
         <div className="mb-7 flex flex-wrap items-center justify-between gap-6">
           <div className="flex items-center gap-2.5">
-            <span className="font-display text-gold text-[15px] tracking-[var(--wordmark-letter-spacing)]">REBUILD</span>
+            <Wordmark />
           </div>
 
           {socialMedia.length > 0 && (
