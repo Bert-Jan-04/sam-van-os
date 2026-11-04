@@ -11,6 +11,10 @@ import {
   REST_PUT,
 } from '@payloadcms/next/routes'
 
+// Video uploads trigger poster-frame generation (fetch + ffmpeg), which can
+// exceed the default function timeout. Re-add this if Payload regenerates this file.
+export const maxDuration = 60
+
 export const GET = REST_GET(config)
 export const POST = REST_POST(config)
 export const DELETE = REST_DELETE(config)
