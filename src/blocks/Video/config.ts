@@ -1,5 +1,7 @@
 import type { Block } from 'payload'
 
+import { videoField } from '@/fields/image'
+
 export const VideoBlock: Block = {
   slug: 'video',
   labels: {
@@ -12,17 +14,12 @@ export const VideoBlock: Block = {
       name: 'heading',
       type: 'text',
     },
-    {
-      name: 'video',
-      type: 'upload',
-      relationTo: 'media',
-      label: 'Video',
+    videoField('video', 'Video', {
       required: true,
-      filterOptions: { mimeType: { contains: 'video/' } },
       admin: {
         description: 'Upload een videobestand.',
       },
-    },
+    }),
     {
       name: 'caption',
       type: 'text',
