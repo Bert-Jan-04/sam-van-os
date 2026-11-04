@@ -220,6 +220,10 @@ export interface Media {
    */
   alt?: string | null;
   caption?: string | null;
+  /**
+   * Optioneel. Deze afbeelding wordt overal getoond voordat de video speelt. Leeg laten = automatische screenshot uit de video.
+   */
+  cover?: (number | null) | Media;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -782,6 +786,7 @@ export interface TimelineBlockSelect<T extends boolean = true> {
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
   caption?: T;
+  cover?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;

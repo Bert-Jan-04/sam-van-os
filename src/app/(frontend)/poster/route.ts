@@ -20,6 +20,21 @@ export async function GET(request: NextRequest) {
 
   const payload = await getPayloadClient()
 
+  const video = await payload.find({
+    collection: 'media',
+    where: { filename: { equals: filename } },
+    limit: 1,
+    depth: 1,
+    overrideAccess: true,
+  })
+  const videoDoc = video.docs[0]
+
+  // A cover picked by hand in the admin wins over the auto-generated poster.
+  const cover = videoDoc?.cover
+  if (cover && typeof cover === 'object' && cover.url) {
+    return NextResponse.redirect(toAbsolute(cover.url))
+  }
+
   const existingPoster = await payload.find({
     collection: 'media',
     where: { filename: { equals: posterName } },
@@ -30,13 +45,6 @@ export async function GET(request: NextRequest) {
     return NextResponse.redirect(toAbsolute(existingPoster.docs[0].url))
   }
 
-  const video = await payload.find({
-    collection: 'media',
-    where: { filename: { equals: filename } },
-    limit: 1,
-    overrideAccess: true,
-  })
-  const videoDoc = video.docs[0]
   if (!videoDoc) return NextResponse.json({ error: 'Video not found' }, { status: 404 })
 
   try {

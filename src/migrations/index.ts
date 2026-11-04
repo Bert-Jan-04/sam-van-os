@@ -17,6 +17,7 @@ import * as migration_20260907_202833_remove_em_dashes_from_content from './2026
 import * as migration_20260908_152746_fix_remaining_em_dash_programma_results from './20260908_152746_fix_remaining_em_dash_programma_results';
 import * as migration_20260914_120000_add_sam_global from './20260914_120000_add_sam_global';
 import * as migration_20260914_121500_seed_sam_global from './20260914_121500_seed_sam_global';
+import * as migration_20261104_110000_add_media_cover from './20261104_110000_add_media_cover';
 
 export const migrations = [
   {
@@ -113,5 +114,10 @@ export const migrations = [
     up: migration_20260914_121500_seed_sam_global.up,
     down: migration_20260914_121500_seed_sam_global.down,
     name: '20260914_121500_seed_sam_global'
+  },
+  {
+    up: migration_20261104_110000_add_media_cover.up,
+    down: migration_20261104_110000_add_media_cover.down,
+    name: '20261104_110000_add_media_cover'
   },
 ];

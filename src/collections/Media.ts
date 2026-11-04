@@ -27,6 +27,18 @@ export const Media: CollectionConfig = {
       name: 'caption',
       type: 'text',
     },
+    {
+      name: 'cover',
+      type: 'upload',
+      relationTo: 'media',
+      label: 'Cover-afbeelding',
+      filterOptions: { mimeType: { contains: 'image/' } },
+      admin: {
+        description:
+          'Optioneel. Deze afbeelding wordt overal getoond voordat de video speelt. Leeg laten = automatische screenshot uit de video.',
+        condition: (data) => Boolean(data?.mimeType?.startsWith('video/')),
+      },
+    },
   ],
   upload: {
     mimeTypes: ['image/*', 'video/*'],
