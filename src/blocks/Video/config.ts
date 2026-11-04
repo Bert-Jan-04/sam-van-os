@@ -18,6 +18,7 @@ export const VideoBlock: Block = {
       relationTo: 'media',
       label: 'Video',
       required: true,
+      filterOptions: { mimeType: { contains: 'video/' } },
       admin: {
         description: 'Upload een videobestand.',
       },

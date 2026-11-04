@@ -1,7 +1,7 @@
 import type { GlobalConfig } from 'payload'
 
 import { privateRead } from '@/access/privateRead'
-import { imageField } from '@/fields/image'
+import { imageField, videoField } from '@/fields/image'
 import { privateField } from '@/fields/private'
 import { seoField } from '@/fields/seo'
 
@@ -252,7 +252,7 @@ export const Resultaten: GlobalConfig = {
           type: 'array',
           labels: { singular: 'Video', plural: "Video's" },
           fields: [
-            imageField('video', 'Video'),
+            videoField('video', 'Video'),
             { name: 'name', type: 'text', required: true, label: 'Naam klant' },
             { name: 'description', type: 'text', label: 'Omschrijving' },
           ],

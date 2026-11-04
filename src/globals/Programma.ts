@@ -1,7 +1,7 @@
 import type { GlobalConfig } from 'payload'
 
 import { privateRead } from '@/access/privateRead'
-import { imageField } from '@/fields/image'
+import { imageField, videoField } from '@/fields/image'
 import { privateField } from '@/fields/private'
 import { seoField } from '@/fields/seo'
 
@@ -300,7 +300,7 @@ export const Programma: GlobalConfig = {
           type: 'array',
           label: "Video's",
           labels: { singular: 'Video', plural: "Video's" },
-          fields: [imageField('video', 'Video')],
+          fields: [videoField('video', 'Video')],
           defaultValue: [{}, {}, {}],
         },
       ],

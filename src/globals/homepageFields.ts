@@ -1,6 +1,6 @@
 import type { Field } from 'payload'
 
-import { imageField } from '@/fields/image'
+import { imageField, videoField } from '@/fields/image'
 
 const repeat = <T>(count: number, factory: () => T): T[] => Array.from({ length: count }, factory)
 
@@ -320,7 +320,7 @@ export const homepageFields: Field[] = [
         type: 'array',
         label: "Video's",
         labels: { singular: 'Video', plural: "Video's" },
-        fields: [imageField('video', 'Video')],
+        fields: [videoField('video', 'Video')],
         defaultValue: repeat(3, () => ({})),
       },
     ],
@@ -366,7 +366,7 @@ export const homepageFields: Field[] = [
         type: 'array',
         label: "Video's",
         labels: { singular: 'Video', plural: "Video's" },
-        fields: [imageField('video', 'Video')],
+        fields: [videoField('video', 'Video')],
         defaultValue: repeat(4, () => ({})),
       },
     ],
@@ -393,7 +393,7 @@ export const homepageFields: Field[] = [
       imageField('horizontalImage', 'Foto (horizontaal, boven de tekst)'),
       imageField('image1', 'Foto 1 (rechterkolom)'),
       imageField('image2', 'Foto 2 (rechterkolom)'),
-      imageField('bottomImage', 'Video (rechterkolom, onder)'),
+      videoField('bottomImage', 'Video (rechterkolom, onder)'),
     ],
   },
   {
